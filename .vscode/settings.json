@@ -1,0 +1,44 @@
+{
+  "cSpell.words": ["fumadocs", "jayantrohila", "Liby", "libyui"],
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit"
+  },
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": false,
+
+  "[mdx]": {
+    "editor.defaultFormatter": "unifiedjs.vscode-mdx"
+  },
+  "files.exclude": {
+    "**/.next": true,
+    "**/.source": true,
+    "**/.vscode": true,
+    "**/node_modules": true,
+    "**/next-env.d.ts": true,
+    "**/pnpm-lock.yaml": true,
+    "**/package-lock.json": true,
+    "**/yarn.lock": true,
+    "**/postcss.config.js": true,
+    "**/postcss.config.cjs": true,
+    "**/postcss.config.mjs": true,
+    "**/tailwind.config.js": true,
+    "**/tailwind.config.ts": true,
+    "**/tsconfig.tsbuildinfo": true,
+    "**/.turbo": true,
+    "**/.vercel": true
+  },
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/.turbo": true
+  },
+
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.next/**": true,
+    "**/.turbo/**": true
+  }
+}
