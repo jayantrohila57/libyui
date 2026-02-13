@@ -1,5 +1,14 @@
 {
-  "title": "Getting Started",
   "root": true,
-  "pages": ["---Sections---", "index", "---Components---", "test"]
+  "pages": [
+    "---Getting Started---",
+    "Introduction",
+    "---Sections---",
+    "components",
+    "blocks",
+    "patterns",
+    "recipes",
+    "modules",
+    "tooling"
+  ]
 }

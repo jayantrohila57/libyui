@@ -1,0 +1,33 @@
+---
+title: Modal
+description: Dialog modal overlay
+icon: Component
+---
+
+# Modal
+
+A dialog modal overlay component for displaying content in a popup.
+
+## Usage
+
+```tsx
+import { Modal } from 'libyui'
+
+export default function Example() {
+  return (
+    <Modal isOpen={true} onClose={() => {}}>
+      <h2>Modal Title</h2>
+      <p>Modal content goes here.</p>
+    </Modal>
+  )
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `isOpen` | `boolean` | `false` | Whether modal is open |
+| `onClose` | `() => void` | - | Close handler |
+| `children` | `ReactNode` | - | Modal content |
+| `className` | `string` | - | Additional CSS classes |

@@ -1,0 +1,37 @@
+---
+title: Tabs
+description: Tabbed interface component
+icon: Component
+---
+
+# Tabs
+
+A tabbed interface component for organizing content in multiple tabs.
+
+## Usage
+
+```tsx
+import { Tabs, Tab, TabPanel } from 'libyui'
+
+export default function Example() {
+  return (
+    <Tabs>
+      <Tab label="Tab 1">
+        <TabPanel>Content for tab 1</TabPanel>
+      </Tab>
+      <Tab label="Tab 2">
+        <TabPanel>Content for tab 2</TabPanel>
+      </Tab>
+    </Tabs>
+  )
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `defaultTab` | `string` | - | Default active tab |
+| `onTabChange` | `(tab: string) => void` | - | Tab change handler |
+| `children` | `ReactNode` | - | Tab elements |
+| `className` | `string` | - | Additional CSS classes |

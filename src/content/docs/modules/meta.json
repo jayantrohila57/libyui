@@ -1,0 +1,5 @@
+{
+  "root": true,
+  "pages": ["index", "data-table", "data-forms"],
+  "icon": "Puzzle"
+}

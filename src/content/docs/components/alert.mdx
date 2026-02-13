@@ -1,0 +1,31 @@
+---
+title: Alert
+description: Alert messages with different types
+icon: Component
+---
+
+# Alert
+
+Alert component for displaying important messages with different severity levels.
+
+## Usage
+
+```tsx
+import { Alert } from 'libyui'
+
+export default function Example() {
+  return (
+    <Alert variant="info">
+      This is an informational message.
+    </Alert>
+  )
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"info" \| "success" \| "warning" \| "error"` | `"info"` | Alert type |
+| `children` | `ReactNode` | - | Alert content |
+| `className` | `string` | - | Additional CSS classes |

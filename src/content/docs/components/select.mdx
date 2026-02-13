@@ -1,0 +1,34 @@
+---
+title: Select
+description: Dropdown selection component
+icon: Component
+---
+
+# Select
+
+A dropdown selection component for choosing from a list of options.
+
+## Usage
+
+```tsx
+import { Select } from 'libyui'
+
+export default function Example() {
+  return (
+    <Select>
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+      <option value="option3">Option 3</option>
+    </Select>
+  )
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | Option elements |
+| `placeholder` | `string` | - | Placeholder text |
+| `disabled` | `boolean` | `false` | Disable the select |
+| `className` | `string` | - | Additional CSS classes |

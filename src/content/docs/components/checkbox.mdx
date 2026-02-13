@@ -1,0 +1,31 @@
+---
+title: Checkbox
+description: Custom checkbox with multiple states
+icon: Component
+---
+
+# Checkbox
+
+A custom checkbox component with multiple states and styling options.
+
+## Usage
+
+```tsx
+import { Checkbox } from 'libyui'
+
+export default function Example() {
+  return (
+    <Checkbox label="Accept terms" />
+  )
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `label` | `string` | - | Checkbox label |
+| `checked` | `boolean` | `false` | Whether checkbox is checked |
+| `disabled` | `boolean` | `false` | Disable the checkbox |
+| `onChange` | `(checked: boolean) => void` | - | Change handler |
+| `className` | `string` | - | Additional CSS classes |
