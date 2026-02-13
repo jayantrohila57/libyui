@@ -1,12 +1,12 @@
-import { docs } from "fumadocs-mdx:collections/server";
+import { docsConfig } from "fumadocs-mdx:collections/server";
 import { type InferPageType, loader } from "fumadocs-core/source";
 import { lucideIconsPlugin } from "fumadocs-core/source/lucide-icons";
 import { icons } from "lucide-react";
 import { createElement } from "react";
-// See https://fumadocs.dev/docs/headless/source-api for more info
-export const source = loader({
+
+export const docsSource = loader({
   baseUrl: "/docs",
-  source: docs.toFumadocsSource(),
+  source: docsConfig.toFumadocsSource(),
   icon(icon) {
     if (!icon) {
       // You may set a default icon
@@ -17,7 +17,7 @@ export const source = loader({
   plugins: [lucideIconsPlugin()],
 });
 
-export function getPageImage(page: InferPageType<typeof source>) {
+export function getPageImage(page: InferPageType<typeof docsSource>) {
   const segments = [...page.slugs, "image.png"];
 
   return {
@@ -26,7 +26,7 @@ export function getPageImage(page: InferPageType<typeof source>) {
   };
 }
 
-export async function getLLMText(page: InferPageType<typeof source>) {
+export async function getLLMText(page: InferPageType<typeof docsSource>) {
   const processed = await page.data.getText("processed");
 
   return `# ${page.data.title}

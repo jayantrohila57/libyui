@@ -1,9 +1,9 @@
-import { getLLMText, source } from "@/lib/source";
+import { docsSource, getLLMText } from "@/module/docs/docs.options";
 
 export const revalidate = false;
 
 export async function GET() {
-  const scan = source.getPages().map(getLLMText);
+  const scan = docsSource.getPages().map(getLLMText);
   const scanned = await Promise.all(scan);
 
   return new Response(scanned.join("\n\n"));

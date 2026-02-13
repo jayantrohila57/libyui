@@ -1,20 +1,20 @@
-import { getPageImage, source } from "@/lib/source";
 import {
   DocsBody,
   DocsDescription,
   DocsPage,
   DocsTitle,
 } from "fumadocs-ui/layouts/docs/page";
-import { notFound } from "next/navigation";
-import { getMDXComponents } from "@/mdx-components";
-import type { Metadata } from "next";
 import { createRelativeLink } from "fumadocs-ui/mdx";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { LLMCopyButton, ViewOptions } from "@/components/ai/page-actions";
-import { gitConfig } from "@/lib/layout.shared";
+import { getMDXComponents } from "@/components/mdx/mdx-components";
+import { docsSource, getPageImage } from "@/module/docs/docs.options";
+import { gitConfig } from "@/module/github/git.config";
 
 export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
   const params = await props.params;
-  const page = source.getPage(params.slug);
+  const page = docsSource.getPage(params.slug);
   if (!page) notFound();
 
   const MDX = page.data.body;
@@ -37,7 +37,7 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
         <MDX
           components={getMDXComponents({
             // this allows you to link to other pages with relative file paths
-            a: createRelativeLink(source, page),
+            a: createRelativeLink(docsSource, page),
           })}
         />
       </DocsBody>
@@ -46,17 +46,18 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
 }
 
 export async function generateStaticParams() {
-  return source.generateParams();
+  return docsSource.generateParams();
 }
 
 export async function generateMetadata(
   props: PageProps<"/docs/[[...slug]]">,
 ): Promise<Metadata> {
   const params = await props.params;
-  const page = source.getPage(params.slug);
+  const page = docsSource.getPage(params.slug);
   if (!page) notFound();
 
   return {
+    metadataBase: new URL("http://localhost:3000"),
     title: page.data.title,
     description: page.data.description,
     openGraph: {

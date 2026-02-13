@@ -1,7 +1,6 @@
-import { source } from "@/lib/source";
 import { createFromSource } from "fumadocs-core/search/server";
+import { docsSource } from "@/module/docs/docs.options";
 
-export const { GET } = createFromSource(source, {
-  // https://docs.orama.com/docs/orama-js/supported-languages
+export const { GET } = createFromSource(docsSource, {
   language: "english",
 });

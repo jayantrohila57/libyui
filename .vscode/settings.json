@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["fumadocs", "jayantrohila", "Liby", "libyui"],
+  "cSpell.words": ["fumadocs", "jayantrohila", "Liby", "libyui", "llms"],
   "editor.defaultFormatter": "biomejs.biome",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
@@ -40,5 +40,8 @@
     "**/node_modules/**": true,
     "**/.next/**": true,
     "**/.turbo/**": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
   }
 }
