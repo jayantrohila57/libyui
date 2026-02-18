@@ -10,6 +10,8 @@ import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { MDXComponents } from "mdx/types";
 import { ComponentPreview } from "@/module/common/component-preview";
 import { ComponentsList } from "@/module/common/components-list";
+import { onBlockFeedbackAction } from "@/module/github/github";
+import { FeedbackBlock } from "../feedback/client";
 
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
@@ -30,5 +32,10 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     Banner,
     ComponentsList,
     ComponentPreview,
+    FeedbackBlock: (props) => (
+      <FeedbackBlock {...props} onSendAction={onBlockFeedbackAction}>
+        {props.children}
+      </FeedbackBlock>
+    ),
   };
 }

@@ -2,7 +2,7 @@ import { RootProvider } from "fumadocs-ui/provider/next";
 import "./global.css";
 import type { Metadata, Viewport } from "next";
 import { Red_Hat_Display } from "next/font/google";
-import { env } from "@/lib/env";
+import { envClient } from "@/lib/env";
 
 const redHatDisplay = Red_Hat_Display({
   subsets: ["latin"],
@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
+  metadataBase: new URL(envClient.NEXT_PUBLIC_BASE_URL),
   title: "LibyUI - Build Beautiful UI Components. Ship Faster.",
   description:
     "LibyUI is your comprehensive React component library for building modern, accessible, and stunning user interfaces with ease.",
@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     description:
       "LibyUI is your comprehensive React component library for building modern, accessible, and stunning user interfaces with ease.",
     type: "website",
-    url: env.NEXT_PUBLIC_BASE_URL,
+    url: envClient.NEXT_PUBLIC_BASE_URL,
     images: [
       {
-        url: `${env.NEXT_PUBLIC_BASE_URL}/opengraph-image`,
+        url: `${envClient.NEXT_PUBLIC_BASE_URL}/opengraph-image`,
         width: 1200,
         height: 630,
         alt: "LibyUI - Build Beautiful UI Components. Ship Faster.",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "LibyUI - Build Beautiful UI Components. Ship Faster.",
     description:
       "LibyUI is your comprehensive React component library for building modern, accessible, and stunning user interfaces with ease.",
-    images: [`${env.NEXT_PUBLIC_BASE_URL}/opengraph-image`],
+    images: [`${envClient.NEXT_PUBLIC_BASE_URL}/opengraph-image`],
   },
 };
 

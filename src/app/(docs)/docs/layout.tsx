@@ -1,4 +1,4 @@
-import { DocsLayout } from "fumadocs-ui/layouts/docs";
+import { DocsLayout } from "fumadocs-ui/layouts/notebook";
 import { BookIcon } from "lucide-react";
 import { LLogo } from "@/components/common/logo";
 import { docsSource } from "@/module/docs/docs.options";
@@ -25,7 +25,7 @@ export default function Layout({ children }: LayoutProps<"/docs">) {
           active: "nested-url",
         },
       ]}
-      tabMode="auto"
+      tabMode="navbar"
       githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}`}
     >
       {children}
