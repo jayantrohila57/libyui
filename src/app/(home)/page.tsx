@@ -1,7 +1,35 @@
 import { ChevronRight, MessageCircle, Search } from "lucide-react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { env } from "@/lib/env";
+
+export const metadata: Metadata = {
+  title: "LibyUI - Build Beautiful UI Components. Ship Faster.",
+  description:
+    "LibyUI is your comprehensive React component library for building modern, accessible, and stunning user interfaces with ease.",
+  keywords: [
+    "React",
+    "UI Components",
+    "Component Library",
+    "TypeScript",
+    "Tailwind CSS",
+  ],
+  openGraph: {
+    title: "LibyUI - Build Beautiful UI Components. Ship Faster.",
+    description:
+      "LibyUI is your comprehensive React component library for building modern, accessible, and stunning user interfaces with ease.",
+    type: "website",
+    url: env.NEXT_PUBLIC_BASE_URL,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LibyUI - Build Beautiful UI Components. Ship Faster.",
+    description:
+      "LibyUI is your comprehensive React component library for building modern, accessible, and stunning user interfaces with ease.",
+  },
+};
 
 export default function HeroSection() {
   return (
@@ -31,11 +59,11 @@ export default function HeroSection() {
                   <span className="bg-(--color-border) block h-4 w-px"></span>
                 </Link>
                 <div className="flex flex-col gap-6">
-                  <h1 className="  text-balance text-4xl font-semibold md:text-5xl xl:text-7xl">
+                  <h1 className="  text-balance text-4xl font-semibold md:text-5xl xl:text-6xl">
                     Build Beautiful UI Components. Ship Faster.
                   </h1>
                   <p className="text-muted-foreground max-w-2xl text-sm md:text-xl  text-balance">
-                    LibYUI is your comprehensive React component library for
+                    LibyUI is your comprehensive React component library for
                     building modern, accessible, and stunning user interfaces
                     with ease.
                   </p>
