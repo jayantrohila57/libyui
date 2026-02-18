@@ -23,12 +23,12 @@ export function getPageImage(page: InferPageType<typeof docsSource>) {
   return {
     segments,
     url: `/og/docs/${segments.join("/")}`,
+    alt: `${page.data.title} - LibyUI Documentation`,
   };
 }
 
 export async function getLLMText(page: InferPageType<typeof docsSource>) {
   const processed = await page.data.getText("processed");
-
   return `# ${page.data.title}
 
 ${processed}`;
