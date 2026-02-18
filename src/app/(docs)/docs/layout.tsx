@@ -1,5 +1,6 @@
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { BookIcon } from "lucide-react";
+import { LLogo } from "@/components/common/logo";
 import { docsSource } from "@/module/docs/docs.options";
 import { gitConfig } from "@/module/github/git.config";
 
@@ -8,7 +9,12 @@ export default function Layout({ children }: LayoutProps<"/docs">) {
     <DocsLayout
       tree={docsSource.getPageTree()}
       nav={{
-        title: "LibyUI",
+        title: (
+          <span className="flex items-center gap-2">
+            <LLogo size={32} />
+            <span className="font-semibold">LibyUI</span>
+          </span>
+        ),
       }}
       links={[
         {
