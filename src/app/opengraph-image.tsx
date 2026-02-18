@@ -1,7 +1,5 @@
 /** biome-ignore-all lint/a11y/noSvgWithoutTitle: TODO: No need for now  but will fix it later */
 
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
 // Image metadata
@@ -16,11 +14,6 @@ export const contentType = "image/png";
 
 // Image generation
 export default async function Image() {
-  // Font loading, process.cwd() is Next.js project directory
-  const redHatDisplay = await readFile(
-    join(process.cwd(), "assets/RedHatDisplay-Regular.ttf"),
-  );
-
   return new ImageResponse(
     <div
       style={{
@@ -32,6 +25,7 @@ export default async function Image() {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
+        fontFamily: "system-ui, -apple-system, sans-serif",
       }}
     >
       <svg
@@ -68,14 +62,6 @@ export default async function Image() {
     </div>,
     {
       ...size,
-      fonts: [
-        {
-          name: "Red Hat Display",
-          data: redHatDisplay,
-          style: "normal",
-          weight: 400,
-        },
-      ],
     },
   );
 }
