@@ -4,3 +4,202 @@ description: Interactive button component with multiple variants and sizes
 icon: Component
 ---
 
+import { ComponentPreview } from "@/module/common/component-preview";
+import { ComponentsList } from "@/module/common/components-list";
+import { ComponentVariant } from "@/module/common/component-variant";
+import { Rocket, Trash2, FileText, Settings, RotateCcw, Link, CheckCircle, Info, Plus, Download, Save, Eye, Edit, Share2 } from "lucide-react";
+
+## Preview
+
+<Cards>
+  {/* Variants */}
+  <Card title="Default"> 
+    <ComponentVariant title="Default">
+      <ComponentsList component="button" children={<><Plus className="w-4 h-4 mr-2" />Save Changes</>} />
+    </ComponentVariant>
+  </Card>
+  <Card title="Destructive">
+    <ComponentVariant title="Destructive">
+      <ComponentsList component="button" children={<><Trash2 className="w-4 h-4 mr-2" />Delete Item</>} variant="destructive" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Success">
+    <ComponentVariant title="Success">
+      <ComponentsList component="button" children={<><CheckCircle className="w-4 h-4 mr-2" />Success</>} variant="success" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Info">
+    <ComponentVariant title="Info">
+      <ComponentsList component="button" children={<><Info className="w-4 h-4 mr-2" />Learn More</>} variant="info" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Outline">
+    <ComponentVariant title="Outline">
+      <ComponentsList component="button" children={<><Edit className="w-4 h-4 mr-2" />Edit</>} variant="outline" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Secondary">
+    <ComponentVariant title="Secondary">
+      <ComponentsList component="button" children={<><Settings className="w-4 h-4 mr-2" />Settings</>} variant="secondary" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Ghost">
+    <ComponentVariant title="Ghost">
+      <ComponentsList component="button" children={<><Eye className="w-4 h-4 mr-2" />Preview</>} variant="ghost" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Link">
+    <ComponentVariant title="Link">
+      <ComponentsList component="button" children={<><Share2 className="w-4 h-4 mr-2" />Share</>} variant="link" />
+    </ComponentVariant>
+  </Card>
+  
+  {/* Sizes */}
+  <Card title="Default | xs">
+    <ComponentVariant title="Extra Small">
+      <ComponentsList component="button" children={<><Plus className="w-3 h-3 mr-1" />Add</>} size="xs" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Default | sm">
+    <ComponentVariant title="Small">
+      <ComponentsList component="button" children={<><Download className="w-3.5 h-3.5 mr-1.5" />Download</>} size="sm" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Default | lg">
+    <ComponentVariant title="Large">
+      <ComponentsList component="button" children={<><Save className="w-5 h-5 mr-2" />Save Document</>} size="lg" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Default | icon">
+    <ComponentVariant title="Icon">
+      <ComponentsList component="button" children={<Rocket />} size="icon" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Default | icon-xs">
+    <ComponentVariant title="Icon Extra Small">
+      <ComponentsList component="button" children={<Rocket />} size="icon-xs" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Default | icon-sm">
+    <ComponentVariant title="Icon Small">
+      <ComponentsList component="button" children={<Rocket />} size="icon-sm" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Default | icon-lg">
+    <ComponentVariant title="Icon Large">
+      <ComponentsList component="button" children={<Rocket />} size="icon-lg" />
+    </ComponentVariant>
+  </Card>
+  
+  {/* Variant + Size Combinations */}
+  <Card title="Destructive | xs">
+    <ComponentVariant title="Destructive Extra Small">
+      <ComponentsList component="button" children={<><Trash2 className="w-3 h-3 mr-1" />Delete</>} variant="destructive" size="xs" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Destructive | sm">
+    <ComponentVariant title="Destructive Small">
+      <ComponentsList component="button" children={<><Trash2 className="w-3.5 h-3.5 mr-1.5" />Remove</>} variant="destructive" size="sm" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Destructive | lg">
+    <ComponentVariant title="Destructive Large">
+      <ComponentsList component="button" children={<><Trash2 className="w-5 h-5 mr-2" />Delete Forever</>} variant="destructive" size="lg" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Success | xs">
+    <ComponentVariant title="Success Extra Small">
+      <ComponentsList component="button" children={<><CheckCircle className="w-3 h-3 mr-1" />Done</>} variant="success" size="xs" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Success | sm">
+    <ComponentVariant title="Success Small">
+      <ComponentsList component="button" children={<><CheckCircle className="w-3.5 h-3.5 mr-1.5" />Complete</>} variant="success" size="sm" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Success | lg">
+    <ComponentVariant title="Success Large">
+      <ComponentsList component="button" children={<><CheckCircle className="w-5 h-5 mr-2" />Task Complete</>} variant="success" size="lg" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Info | xs">
+    <ComponentVariant title="Info Extra Small">
+      <ComponentsList component="button" children={<><Info className="w-3 h-3 mr-1" />Help</>} variant="info" size="xs" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Info | sm">
+    <ComponentVariant title="Info Small">
+      <ComponentsList component="button" children={<><Info className="w-3.5 h-3.5 mr-1.5" />Details</>} variant="info" size="sm" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Info | lg">
+    <ComponentVariant title="Info Large">
+      <ComponentsList component="button" children={<><Info className="w-5 h-5 mr-2" />View Documentation</>} variant="info" size="lg" />
+    </ComponentVariant>
+  </Card>
+  
+  {/* Icon Variants */}
+  <Card title="Destructive | icon">
+    <ComponentVariant title="Destructive Icon">
+      <ComponentsList component="button" children={<Trash2 />} variant="destructive" size="icon" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Success | icon">
+    <ComponentVariant title="Success Icon">
+      <ComponentsList component="button" children={<CheckCircle />} variant="success" size="icon" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Info | icon">
+    <ComponentVariant title="Info Icon">
+      <ComponentsList component="button" children={<Info />} variant="info" size="icon" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Outline | icon">
+    <ComponentVariant title="Outline Icon">
+      <ComponentsList component="button" children={<FileText />} variant="outline" size="icon" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Secondary | icon">
+    <ComponentVariant title="Secondary Icon">
+      <ComponentsList component="button" children={<Settings />} variant="secondary" size="icon" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Ghost | icon">
+    <ComponentVariant title="Ghost Icon">
+      <ComponentsList component="button" children={<RotateCcw />} variant="ghost" size="icon" />
+    </ComponentVariant>
+  </Card>
+  <Card title="Link | icon">
+    <ComponentVariant title="Link Icon">
+      <ComponentsList component="button" children={<Link />} variant="link" size="icon" />
+    </ComponentVariant>
+  </Card>
+</Cards>
+   
+
+  
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button";
+
+export default function Example() {
+  return (
+    <Button>
+      Submit
+    </Button>
+  );
+}
+```
+ 
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "outline" \| "secondary" \| "ghost" \| "destructive" \| "success" \| "info" \| "link"` | `"default"` | The visual style variant of the button |
+| `size` | `"default" \| "xs" \| "sm" \| "lg" \| "icon" \| "icon-xs" \| "icon-sm" \| "icon-lg"` | `"default"` | The size of the button |
+| `asChild` | `boolean` | `false` | When true, the button will render as its child element using Radix UI Slot |
+| `className` | `string` | - | Additional CSS classes to apply to the button |
+
+All standard HTML button attributes are also supported.

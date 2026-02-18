@@ -8,6 +8,8 @@ import * as TabsComponents from "fumadocs-ui/components/tabs";
 import { TypeTable } from "fumadocs-ui/components/type-table";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { MDXComponents } from "mdx/types";
+import { ComponentPreview } from "@/module/common/component-preview";
+import { ComponentsList } from "@/module/common/components-list";
 
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
@@ -26,5 +28,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     CodeBlock,
     Pre,
     Banner,
+    ComponentsList,
+    ComponentPreview,
   };
 }

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "libyui",
+  "homepage": "https://libyui.com",
+  "items": [
+    {
+      "name": "button",
+      "description": "this is a button component",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

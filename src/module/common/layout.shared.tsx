@@ -4,7 +4,6 @@ import { gitConfig } from "@/module/github/git.config";
 
 export function baseOptions(): BaseLayoutProps {
   return {
-    
     nav: {
       title: "LibyUI",
     },

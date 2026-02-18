@@ -1,16 +1,5 @@
 {
   "root": true,
-  "pages": [
-    "button",
-    "card",
-    "input",
-    "select",
-    "checkbox",
-    "alert",
-    "modal",
-    "badge",
-    "tooltip",
-    "tabs"
-  ],
+  "pages": ["button"],
   "icon": "Box"
 }
