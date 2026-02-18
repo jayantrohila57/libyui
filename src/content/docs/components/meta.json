@@ -1,5 +1,13 @@
 {
   "root": true,
-  "pages": ["index", "---Components List---", "button", "card", "separator"],
+  "pages": [
+    "index",
+    "---Primitives Components---",
+    "(primitives)/button",
+    "(primitives)/card",
+    "(primitives)/separator",
+    "---Composite Components---",
+    "(composite)/mode-toggle"
+  ],
   "icon": "Box"
 }
