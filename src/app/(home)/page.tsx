@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { env } from "@/lib/env";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
   title: "LibyUI - Build Beautiful UI Components. Ship Faster.",
   description:
     "LibyUI is your comprehensive React component library for building modern, accessible, and stunning user interfaces with ease.",
@@ -22,12 +23,21 @@ export const metadata: Metadata = {
       "LibyUI is your comprehensive React component library for building modern, accessible, and stunning user interfaces with ease.",
     type: "website",
     url: env.NEXT_PUBLIC_BASE_URL,
+    images: [
+      {
+        url: `${env.NEXT_PUBLIC_BASE_URL}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "LibyUI - Build Beautiful UI Components. Ship Faster.",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "LibyUI - Build Beautiful UI Components. Ship Faster.",
     description:
       "LibyUI is your comprehensive React component library for building modern, accessible, and stunning user interfaces with ease.",
+    images: [`${env.NEXT_PUBLIC_BASE_URL}/opengraph-image`],
   },
 };
 
