@@ -24,6 +24,13 @@
       "react": "recommended"
     }
   },
+  "css": {
+    "parser": {
+      "cssModules": false,
+      "allowWrongLineComments": false,
+      "tailwindDirectives": true
+    }
+  },
   "assist": {
     "actions": {
       "source": {

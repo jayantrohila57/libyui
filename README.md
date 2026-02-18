@@ -1,9 +1,19 @@
-# libyui
+# LibyUI
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+LibyUI is a modern, accessible, and beautifully designed React component library built with TypeScript and Tailwind CSS. Our components are crafted to help you build stunning web applications with ease and confidence.
 
-Run development server:
+## Features
+
+- **🎨 Beautiful Design**: Thoughtfully crafted components with a modern aesthetic
+- **♿ Accessible**: Built with accessibility in mind, following WCAG guidelines
+- **🔧 TypeScript First**: Full TypeScript support for better developer experience
+- **🎭 Customizable**: Easy to customize with Tailwind CSS classes and design tokens
+- **📱 Responsive**: Mobile-first design that works seamlessly across all devices
+
+
+## Development
+
+Run the documentation site:
 
 ```bash
 npm run dev
@@ -13,12 +23,14 @@ pnpm dev
 yarn dev
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+Open http://localhost:3000 with your browser to see the documentation and examples.
 
-## Explore
+## Project Structure
 
 In the project, you can see:
 
+- `src/components/`: React component library source code
+- `src/content/docs/`: Documentation files written in MDX
 - `lib/source.ts`: Code for content source adapter, [`loader()`](https://fumadocs.dev/docs/headless/source-api) provides the interface to access your content.
 - `lib/layout.shared.tsx`: Shared options for layouts, optional but preferred to keep.
 
