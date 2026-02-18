@@ -2,7 +2,6 @@
 
 import { ImageResponse } from "next/og";
 
-// Image metadata
 export const alt = "LibyUI";
 export const size = {
   width: 1200,
@@ -12,7 +11,6 @@ const borderRadius = 20;
 
 export const contentType = "image/png";
 
-// Image generation
 export default async function Image() {
   return new ImageResponse(
     <div
@@ -29,8 +27,8 @@ export default async function Image() {
       }}
     >
       <svg
-        width={40}
-        height={40}
+        width={140}
+        height={140}
         viewBox="0 0 140 140"
         xmlns="http://www.w3.org/2000/svg"
       >
