@@ -122,5 +122,6 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-red-hat-display), system-ui, sans-serif;
   }
 }

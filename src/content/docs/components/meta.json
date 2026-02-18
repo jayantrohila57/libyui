@@ -1,5 +1,5 @@
 {
   "root": true,
-  "pages": ["button"],
+  "pages": ["index", "---Components List---", "button", "card", "separator"],
   "icon": "Box"
 }
