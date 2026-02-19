@@ -3,9 +3,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { env } from "@/lib/env";
+import { envClient } from "@/lib/env-client";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(envClient.NEXT_PUBLIC_BASE_URL),
   title: "LibyUI - Build Beautiful UI Components. Ship Faster.",
   description:
     "LibyUI is your comprehensive React component library for building modern, accessible, and stunning user interfaces with ease.",
@@ -21,13 +22,22 @@ export const metadata: Metadata = {
     description:
       "LibyUI is your comprehensive React component library for building modern, accessible, and stunning user interfaces with ease.",
     type: "website",
-    url: env.NEXT_PUBLIC_BASE_URL,
+    url: envClient.NEXT_PUBLIC_BASE_URL,
+    images: [
+      {
+        url: `${envClient.NEXT_PUBLIC_BASE_URL}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "LibyUI - Build Beautiful UI Components. Ship Faster.",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "LibyUI - Build Beautiful UI Components. Ship Faster.",
     description:
       "LibyUI is your comprehensive React component library for building modern, accessible, and stunning user interfaces with ease.",
+    images: [`${envClient.NEXT_PUBLIC_BASE_URL}/opengraph-image`],
   },
 };
 

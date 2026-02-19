@@ -3,18 +3,22 @@ import {
   DocsDescription,
   DocsPage,
   DocsTitle,
-} from "fumadocs-ui/layouts/docs/page";
+  EditOnGitHub,
+} from "fumadocs-ui/layouts/notebook/page";
 import { createRelativeLink } from "fumadocs-ui/mdx";
 import { DynamicIcon, type IconName } from "lucide-react/dynamic";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LLMCopyButton, ViewOptions } from "@/components/ai/page-actions";
+import { Feedback } from "@/components/feedback/client";
 import { getMDXComponents } from "@/components/mdx/mdx-components";
 import { Separator } from "@/components/ui/separator";
-import { env } from "@/lib/env";
+import { envClient } from "@/lib/env-client";
 import { camelToSlug } from "@/lib/utils";
 import { docsSource, getPageImage } from "@/module/docs/docs.options";
 import { gitConfig } from "@/module/github/git.config";
+import { onPageFeedbackAction } from "@/module/github/github";
+import { getLastEditTime } from "@/module/github/last-edit";
 
 export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
   const params = await props.params;
@@ -22,26 +26,28 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
   if (!page) notFound();
   const MDX = page.data.body;
   const iconName = camelToSlug(page.data.icon) as IconName;
+  const lastEdit = await getLastEditTime(page.path);
 
   return (
     <DocsPage className="" toc={page.data.toc} full={page.data.full}>
-      <div className="flex flex-col md:flex-row gap-2 items-start md:items-center justify-between">
-        <div className="flex flex-col">
-          <div className=" flex flex-row gap-2 items-center">
-            <DynamicIcon name={iconName} />
-            <DocsTitle>{page.data.title}</DocsTitle>
-          </div>
-          <DocsDescription className="mb-0 max-w-xl">
-            {page.data.description}
-          </DocsDescription>
+      <div className="flex flex-col">
+        <div className=" flex flex-row gap-2 items-center">
+          <DynamicIcon name={iconName} />
+          <DocsTitle>{page.data.title}</DocsTitle>
         </div>
-        <div className="flex flex-row gap-2 items-center">
-          <LLMCopyButton markdownUrl={`${page.url}.mdx`} />
-          <ViewOptions
-            markdownUrl={`${page.url}.mdx`}
-            githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${page.path}`}
-          />
-        </div>
+        <DocsDescription className="mb-0 max-w-xl">
+          {page.data.description}
+        </DocsDescription>
+      </div>
+      <Separator />
+
+      <div className="flex flex-row gap-2 items-center">
+        <LLMCopyButton markdownUrl={`${page.url}.mdx`} />
+        <ViewOptions
+          markdownUrl={`${page.url}.mdx`}
+          githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${page.path}`}
+        />
+        <EditOnGitHub />
       </div>
       <Separator />
       <DocsBody className="">
@@ -51,6 +57,13 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
           })}
         />
       </DocsBody>
+      <Feedback onSendAction={onPageFeedbackAction} />
+      {lastEdit && (
+        <p className="text-sm text-muted-foreground flex items-center gap-2">
+          <DynamicIcon name={iconName} />
+          Last updated on {new Date(lastEdit).toLocaleDateString()}
+        </p>
+      )}
     </DocsPage>
   );
 }
@@ -67,11 +80,28 @@ export async function generateMetadata(
   if (!page) notFound();
 
   return {
-    metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
+    metadataBase: new URL(envClient.NEXT_PUBLIC_BASE_URL),
     title: page.data.title,
     description: page.data.description,
     openGraph: {
-      images: getPageImage(page).url,
+      title: page.data.title,
+      description: page.data.description,
+      type: "article",
+      url: `${envClient.NEXT_PUBLIC_BASE_URL}${page.url}`,
+      images: [
+        {
+          url: getPageImage(page).url,
+          width: 1200,
+          height: 630,
+          alt: getPageImage(page).alt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.data.title,
+      description: page.data.description,
+      images: [getPageImage(page).url],
     },
     robots: { index: true, follow: true },
   };
