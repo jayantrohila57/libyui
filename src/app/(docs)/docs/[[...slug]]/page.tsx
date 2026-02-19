@@ -32,8 +32,12 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
   return (
     <DocsPage className="" toc={page.data.toc} full={page.data.full}>
       <div className="flex flex-col">
-        <div className=" flex flex-row gap-2 items-center">
-          <DynamicIcon name={iconName} />
+        <div className=" flex flex-row items-center gap-2">
+          <div className="rounded-(--radius) mx-0 flex w-fit items-center border p-1 ">
+            <span className="bg-muted rounded-[calc(var(--radius)-0.25rem)] p-1 text-xs">
+              <DynamicIcon name={iconName} className="size-4" />
+            </span>
+          </div>
           <DocsTitle>{page.data.title}</DocsTitle>
         </div>
         <DocsDescription className="mb-0 max-w-xl">
@@ -46,9 +50,11 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
         <LLMCopyButton markdownUrl={`${page.url}.mdx`} />
         <ViewOptions
           markdownUrl={`${page.url}.mdx`}
-          githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${page.path}`}
+          githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/src/content/docs/${page.path}`}
         />
-        <EditOnGitHub href={`https://github.com/${gitConfig.user}/${gitConfig.repo}/edit/${gitConfig.branch}/content/docs/${page.path}`} />
+        <EditOnGitHub
+          href={`https://github.com/${gitConfig.user}/${gitConfig.repo}/edit/${gitConfig.branch}/src/content/docs/${page.path}`}
+        />
       </div>
       <Separator />
       <DocsBody className="">

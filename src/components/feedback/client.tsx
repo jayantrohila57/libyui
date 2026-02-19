@@ -256,7 +256,7 @@ export function FeedbackBlock({
         <PopoverTrigger
           className={cn(
             buttonVariants({ variant: "secondary", size: "sm" }),
-            "absolute top-0 border end-0 backdrop-blur-sm text-fd-muted-foreground gap-1.5 transition-all  data-[state=open]:bg-fd-accent data-[state=open]:text-fd-accent-foreground",
+            "absolute -top-7 border end-0 backdrop-blur-sm text-fd-muted-foreground gap-1.5 transition-all  data-[state=open]:bg-fd-accent data-[state=open]:text-fd-accent-foreground",
             !open &&
               "opacity-0 pointer-events-none group-hover/feedback:pointer-events-auto group-hover/feedback:opacity-100 group-hover/feedback:delay-100 hover:pointer-events-auto hover:opacity-100 ",
           )}
@@ -267,7 +267,7 @@ export function FeedbackBlock({
           }}
         >
           <MessageSquare className="size-3.5" />
-          Feedback
+          Give Feedback
         </PopoverTrigger>
 
         <div className="in-[.prose-no-margin]:prose-no-margin">{children}</div>
