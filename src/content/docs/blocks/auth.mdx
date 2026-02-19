@@ -1,5 +1,66 @@
 ---
 title: Auth Block
-description: Authentication block for login and registration forms
-icon: Layout
+description: Sign-in and registration form layouts for authentication flows.
+icon: LayoutDashboard
 ---
+
+# Auth Block
+
+The Auth block provides ready-to-use layouts for the most common authentication screens: sign-in, sign-up, and password reset. Each layout is mobile-first, accessible, and built entirely from LibyUI components.
+
+## When to use
+
+<Accordions>
+  <Accordion title="Sign-in layout">
+    Use the sign-in layout when you need a clean, focused login form. It includes an email/password field pair, a "Forgot password" link, and a primary submit button. An optional social login row can be added above or below the form.
+  </Accordion>
+  <Accordion title="Sign-up layout">
+    Use the sign-up layout for new user registration. It includes name, email, password, and confirm-password fields with validation-ready structure and a terms-of-service agreement checkbox.
+  </Accordion>
+  <Accordion title="Password reset layout">
+    Use the password reset layout to request a reset link via email. It provides a minimal, single-field form with a clear call-to-action and a back-to-login link.
+  </Accordion>
+</Accordions>
+
+## Usage
+
+Copy the block below into your project and customize the form action, field names, and styling to match your authentication provider.
+
+```tsx
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+
+export function SignInBlock() {
+  return (
+    <div className="flex min-h-screen items-center justify-center p-4">
+      <Card className="w-full max-w-sm">
+        <CardHeader>
+          <CardTitle>Sign in</CardTitle>
+          <CardDescription>Enter your email and password to continue.</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-1">
+            <label className="text-sm font-medium" htmlFor="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" className="w-full rounded-md border px-3 py-2 text-sm" />
+          </div>
+          <div className="space-y-1">
+            <label className="text-sm font-medium" htmlFor="password">Password</label>
+            <input id="password" type="password" placeholder="••••••••" className="w-full rounded-md border px-3 py-2 text-sm" />
+          </div>
+          <Button className="w-full" size="lg">Sign in</Button>
+          <Separator />
+          <p className="text-center text-sm text-muted-foreground">
+            Don&apos;t have an account?{" "}
+            <a href="/sign-up" className="underline underline-offset-4">Sign up</a>
+          </p>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
+```
+
+<FeedbackBlock>
+More auth layouts (OAuth, magic link, two-factor) are planned. Let us know which you need first.
+</FeedbackBlock>

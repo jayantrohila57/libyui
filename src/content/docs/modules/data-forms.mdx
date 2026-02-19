@@ -1,10 +1,49 @@
 ---
 title: Data Forms
-description: Reusable data forms and form components for LibyUI
+description: A validated, schema-driven form system built from LibyUI components for complex data entry flows.
 icon: Form
 ---
 
 # Data Forms
 
-Learn about reusable modules and building blocks for LibyUI.
- 
+The Data Forms module provides a structured, validated approach to building forms in LibyUI applications. It is built from LibyUI's primitive components and designed to integrate with schema-validation libraries like Zod.
+
+## Key concepts
+
+<Accordions>
+  <Accordion title="Schema-driven fields">
+    Define your form shape with a Zod schema, and the module infers field types, validation rules, and error messages automatically. This eliminates the manual wiring between your validation schema and your form UI.
+  </Accordion>
+  <Accordion title="Controlled vs. uncontrolled inputs">
+    Data Forms supports both patterns. Use controlled inputs when you need to react to field values in real time (for dynamic field sets, conditional sections, etc.), or uncontrolled inputs for simpler, submit-only forms.
+  </Accordion>
+  <Accordion title="Multi-step forms">
+    The module includes a `FormStepper` pattern for multi-step flows. Each step validates independently before advancing, so users see errors exactly when they're relevant.
+  </Accordion>
+  <Accordion title="Error handling">
+    Validation errors are displayed inline, adjacent to the field that triggered them. Error messages come from your Zod schema and are fully customizable per field.
+  </Accordion>
+</Accordions>
+
+## Basic Usage
+
+```tsx
+import { z } from "zod";
+
+const schema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email address"),
+});
+
+// Wire schema to your form library of choice (e.g. react-hook-form)
+```
+
+## Next steps
+
+<Cards>
+  <Card title="Data Table" href="/docs/modules/data-table" description="Display, sort, and filter tabular data using LibyUI components." />
+</Cards>
+
+<FeedbackBlock>
+Have feedback on the Data Forms module or want to request a feature? Let us know.
+</FeedbackBlock>

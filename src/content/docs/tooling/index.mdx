@@ -1,10 +1,49 @@
 ---
 title: Tooling
-description: Development tools and utilities for LibyUI
+description: CLI, TypeScript configuration, linting (Biome), and the developer toolchain around LibyUI.
+root: true
 icon: Wrench
 ---
 
 # Tooling
 
-Learn about development tools and utilities for LibyUI.
- 
+LibyUI comes with an opinionated but configurable developer toolchain. This section covers the CLI for scaffolding components, TypeScript setup, and the Biome linter/formatter configuration used in the project.
+
+## Setup overview
+
+<Steps>
+  <Step>Install LibyUI and its peer dependencies via your package manager</Step>
+  <Step>Run `pnpm shadcn` to initialize the component registry and generate your `components.json`</Step>
+  <Step>Configure TypeScript path aliases (`@/`) in `tsconfig.json`</Step>
+  <Step>Add Biome (or your preferred linter) for consistent formatting across the project</Step>
+</Steps>
+
+## Toolchain
+
+<Cards>
+  <Card title="CLI" href="/docs/tooling" description="Use the shadcn CLI to add, update, and manage LibyUI components in your project." />
+  <Card title="TypeScript" href="/docs/tooling" description="Path aliases, strict mode, and the TypeScript configuration recommended for LibyUI projects." />
+  <Card title="Biome" href="/docs/tooling" description="The linter and formatter configuration used in LibyUI — fast, zero-config, and opinionated." />
+  <Card title="Tailwind CSS" href="/docs/tooling" description="PostCSS setup, design token structure, and Tailwind configuration for LibyUI." />
+</Cards>
+
+## Common questions
+
+<Accordions>
+  <Accordion title="Do I need the CLI?">
+    No — you can copy component source files manually. The CLI (`pnpm shadcn`) just automates the process of adding components to your project and keeping them up to date.
+  </Accordion>
+  <Accordion title="Do I have to use Biome?">
+    No. LibyUI uses Biome internally for speed and zero-config formatting. You can use ESLint and Prettier instead — nothing in LibyUI depends on your linter choice at runtime.
+  </Accordion>
+  <Accordion title="Can I use LibyUI without TypeScript?">
+    Yes, but you'll lose prop autocompletion and type safety for variants and sizes. TypeScript is strongly recommended for the best developer experience.
+  </Accordion>
+  <Accordion title="What version of Tailwind CSS is required?">
+    LibyUI requires Tailwind CSS v4. It uses the PostCSS plugin (`@tailwindcss/postcss`) and the `tw-animate-css` package for animations. Make sure your `postcss.config.mjs` is configured accordingly.
+  </Accordion>
+</Accordions>
+
+<FeedbackBlock>
+Is there a tooling topic you'd like covered in more detail? Open an issue or leave feedback here.
+</FeedbackBlock>

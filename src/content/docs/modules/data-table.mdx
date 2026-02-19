@@ -1,10 +1,56 @@
 ---
 title: Data Table
-description: Reusable data table and table components for LibyUI
+description: A sortable, filterable, and paginated data table built from LibyUI components.
 icon: Table
 ---
 
 # Data Table
 
-Learn about reusable data table and table components for LibyUI.
- 
+The Data Table module provides a fully featured, accessible data table for displaying structured information. It is composed from LibyUI primitives and supports sorting, filtering, pagination, and row selection out of the box.
+
+## Key concepts
+
+<Accordions>
+  <Accordion title="Column definitions">
+    Columns are defined as configuration objects — you specify the key, a header label, an optional render function, and sort/filter behaviour per column. This keeps table markup clean and data-driven.
+  </Accordion>
+  <Accordion title="Sorting">
+    Click any sortable column header to toggle ascending/descending order. Sort state is controlled and can be lifted to the page level for URL-synced sorting.
+  </Accordion>
+  <Accordion title="Filtering">
+    Pass a `filter` value and the table handles client-side filtering across all searchable columns. For server-side filtering, pass a controlled `onFilterChange` callback and handle the query in your data fetching layer.
+  </Accordion>
+  <Accordion title="Pagination">
+    The table includes a built-in pagination bar. Configure `pageSize` and `totalRows` to enable server-side pagination, or leave them off for automatic client-side paging.
+  </Accordion>
+  <Accordion title="Row selection">
+    Enable `selectable` to add checkboxes to each row and a "select all" header checkbox. Selected row IDs are available via the `onSelectionChange` callback.
+  </Accordion>
+</Accordions>
+
+## Basic Usage
+
+```tsx
+const columns = [
+  { key: "name",   header: "Name",  sortable: true },
+  { key: "email",  header: "Email", sortable: true },
+  { key: "status", header: "Status" },
+];
+
+const data = [
+  { id: "1", name: "Jane Smith",  email: "jane@example.com",  status: "Active" },
+  { id: "2", name: "John Doe",    email: "john@example.com",  status: "Inactive" },
+];
+
+// Pass columns and data to your DataTable component
+```
+
+## Next steps
+
+<Cards>
+  <Card title="Data Forms" href="/docs/modules/data-forms" description="Build validated, schema-driven forms using LibyUI components." />
+</Cards>
+
+<FeedbackBlock>
+Have feedback on the Data Table module or want to request a feature? Let us know.
+</FeedbackBlock>

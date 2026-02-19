@@ -1,12 +1,33 @@
 ---
 title: Mode Toggle
-description: Interactive mode toggle component for switching between light and dark modes
+description: Light, dark, and system theme switcher built with next-themes, Radix Dropdown, and Tooltip.
 icon: LayoutGrid
 ---
 
-## Mode Toggle
+import { ComponentPreview } from "@/module/common/component-preview";
 
-The Mode Toggle component allows users to switch between light, dark, and system themes with an animated interface.
+## Overview
+
+The Mode Toggle is a composite component that lets users switch between **light**, **dark**, and **system** themes. It combines a Radix UI `DropdownMenu`, a `Tooltip`, and the LibyUI `Button` — all animated with CSS transitions.
+
+It is called "composite" because it orchestrates multiple primitives into a single, cohesive interaction pattern.
+
+## Usage
+
+```tsx
+import { ModeToggle } from "@/components/composite/mode-toggle";
+
+export default function Navbar() {
+  return (
+    <header className="flex items-center justify-between px-4 py-2">
+      <span>My App</span>
+      <ModeToggle />
+    </header>
+  );
+}
+```
+
+## Source
 
 ```tsx
 import * as React from 'react'
@@ -51,3 +72,28 @@ export function ModeToggle() {
         </TooltipProvider>
     )
 }
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| — | — | — | `ModeToggle` accepts no props. Theme state is managed internally via `next-themes`. |
+
+### Dependencies
+
+| Package | Purpose |
+|---------|---------|
+| `next-themes` | Provides `useTheme()` for reading and setting the active theme |
+| `next-intl` | Provides `useTranslations()` for i18n labels (`LIGHT`, `DARK`, `SYSTEM`, `TOGGLE_THEME`) |
+| `lucide-react` | `Sun` and `Moon` icons with CSS transition animations |
+
+## Accessibility
+
+- The trigger `Button` contains a visually hidden `<span className="sr-only">` that announces the toggle action to screen readers.
+- The `Tooltip` provides a visible label on hover and focus.
+- The `DropdownMenu` is fully keyboard-navigable (`Arrow` keys, `Enter`, `Escape`).
+
+<FeedbackBlock>
+Have feedback on the Mode Toggle or want a variant without i18n dependency? Let us know.
+</FeedbackBlock>

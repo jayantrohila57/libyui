@@ -1,10 +1,34 @@
 ---
 title: Patterns
-description: Design patterns and best practices for using LibyUI
-icon: FingerprintPattern
+description: Proven design and composition patterns for solving common UI challenges with LibyUI.
+root: true
+icon: Waypoints
 ---
 
-# Design Patterns
+# Patterns
 
-Learn about design patterns and best practices for using LibyUI effectively.
- 
+Patterns document proven, repeatable solutions to common UI design and composition problems. Unlike components (which solve a single element) or blocks (which solve a layout section), patterns show you *how to think* about combining LibyUI building blocks for recurring scenarios.
+
+<Accordions>
+  <Accordion title="What makes something a pattern?">
+    A pattern is a reusable approach — not a specific piece of code — that solves a class of problems. It describes the intent, the trade-offs, and the recommended composition, leaving implementation details to you.
+  </Accordion>
+  <Accordion title="Patterns vs. Recipes">
+    Patterns are conceptual and broad (e.g. "loading states", "empty states", "confirmation flows"). Recipes are concrete and step-by-step (e.g. "build a delete confirmation dialog with a toast notification"). Use patterns for guidance, recipes for copy-paste starting points.
+  </Accordion>
+</Accordions>
+
+## Planned Patterns
+
+<Cards>
+  <Card title="Loading States" href="/docs/patterns" description="Skeleton screens, spinners, and optimistic UI patterns for async data." />
+  <Card title="Empty States" href="/docs/patterns" description="Designing for zero-data: placeholders, CTAs, and onboarding prompts." />
+  <Card title="Confirmation Flows" href="/docs/patterns" description="Destructive actions, dialogs, and undo patterns done right." />
+  <Card title="Error Boundaries" href="/docs/patterns" description="Graceful degradation — catching errors in UI trees without crashing the page." />
+  <Card title="Form Validation UX" href="/docs/patterns" description="When and how to show validation errors for the best user experience." />
+  <Card title="Responsive Navigation" href="/docs/patterns" description="Adapting sidebar, navbar, and drawer navigation across breakpoints." />
+</Cards>
+
+<FeedbackBlock>
+Patterns are actively being written. Which pattern would be most useful to you right now? Leave a comment.
+</FeedbackBlock>

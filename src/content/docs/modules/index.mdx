@@ -1,10 +1,33 @@
 ---
 title: Modules
-description: Reusable modules and building blocks for LibyUI
+description: Higher-level feature modules like data tables and form systems — built from LibyUI components.
+root: true
 icon: Puzzle
 ---
 
 # Modules
 
-Learn about reusable modules and building blocks for LibyUI.
- 
+Modules are higher-level, feature-complete building blocks composed from LibyUI primitives. Where components solve a single UI problem (a button, a card), modules solve an entire UI *feature* — like displaying and filtering a data table, or building a validated multi-step form.
+
+<Accordions>
+  <Accordion title="How are modules different from components?">
+    Components are fine-grained and single-purpose. Modules combine components, state management, and layout conventions to create entire interactive features. Think of a module as a fully wired-up section of your app, not just a visual building block.
+  </Accordion>
+  <Accordion title="How are modules different from blocks?">
+    Blocks are visual layout sections (hero sections, footers, pricing tables). Modules are functional feature areas — they may have sorting, filtering, pagination, validation, and other interactive behaviour built in.
+  </Accordion>
+  <Accordion title="Can I use a module without the rest of LibyUI?">
+    Modules depend on LibyUI primitives for their UI layer, so you need the core components installed. The business logic parts (sorting, validation) are standalone and can be extracted if needed.
+  </Accordion>
+</Accordions>
+
+## Available Modules
+
+<Cards>
+  <Card title="Data Table" href="/docs/modules/data-table" description="Sortable, filterable, and paginated data table built on LibyUI components." />
+  <Card title="Data Forms" href="/docs/modules/data-forms" description="Validated, schema-driven form system for building complex data entry flows." />
+</Cards>
+
+<FeedbackBlock>
+More modules are planned. Have a feature area you'd like to see covered? Open an issue on GitHub.
+</FeedbackBlock>

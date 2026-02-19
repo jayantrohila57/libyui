@@ -1,27 +1,40 @@
 ---
 title: Introduction
-description: Welcome to LibyUI - A modern React component library
-icon: Home
+description: What LibyUI is, why it was built, and how to install and use it in your project.
+root: true
+icon: Book
 ---
 
-# Welcome to LibyUI
+# Introduction
 
-LibyUI is a modern, accessible, and beautifully designed React component library built with TypeScript and Tailwind CSS. Our components are crafted to help you build stunning web applications with ease and confidence.
+LibyUI is a modern, accessible, and beautifully designed React component library built with **TypeScript** and **Tailwind CSS**. Components are crafted to help you build stunning web applications with confidence — without sacrificing accessibility or developer experience.
 
 ## Why LibyUI?
 
-- **🎨 Beautiful Design**: Thoughtfully crafted components with a modern aesthetic
-- **♿ Accessible**: Built with accessibility in mind, following WCAG guidelines
-- **🔧 TypeScript First**: Full TypeScript support for better developer experience
-- **🎭 Customizable**: Easy to customize with Tailwind CSS classes and design tokens
-- **📱 Responsive**: Mobile-first design that works seamlessly across all devices
+<Accordions>
+  <Accordion title="Beautiful by default">
+    Every component ships with a carefully considered visual design. You get great-looking UI from day one, with full freedom to restyle using Tailwind CSS classes or design tokens.
+  </Accordion>
+  <Accordion title="Accessible out of the box">
+    Components are built on Radix UI primitives and follow WCAG 2.1 guidelines. Keyboard navigation, ARIA attributes, and focus management are handled for you.
+  </Accordion>
+  <Accordion title="TypeScript-first">
+    Every component is fully typed. You get autocomplete for props, variants, and sizes — and TypeScript will catch mistakes before they reach the browser.
+  </Accordion>
+  <Accordion title="Customizable with Tailwind CSS">
+    LibyUI uses `class-variance-authority` for variants and `tailwind-merge` for safe class overrides. Pass any Tailwind class via `className` and it just works.
+  </Accordion>
+  <Accordion title="Mobile-first and responsive">
+    All components and blocks are designed mobile-first. They adapt gracefully from small screens to large monitors without extra configuration.
+  </Accordion>
+</Accordions>
 
 ## Quick Start
 
 <Steps>
   <Step>Install LibyUI using your preferred package manager</Step>
-  <Step>Import components into your React application</Step>
-  <Step>Start building beautiful user interfaces</Step>
+  <Step>Import the component you need into your file</Step>
+  <Step>Use it — props, variants, and sizes are fully typed</Step>
 </Steps>
 
 ### Installation
@@ -37,22 +50,36 @@ pnpm add libyui
 ### Basic Usage
 
 ```tsx
-import { Button, Card } from 'libyui'
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 export default function App() {
   return (
-    <Card className="p-6">
-      <Button variant="primary">Get Started</Button>
+    <Card>
+      <CardHeader>
+        <CardTitle>Hello, LibyUI</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <Button variant="default" size="lg">
+          Get Started
+        </Button>
+      </CardContent>
     </Card>
-  )
+  );
 }
 ```
 
-## What's Inside?
+## What's inside?
 
 <Cards>
-  <Card title="Components" href="/docs/components" description="Explore our comprehensive collection of UI components" />
-  <Card title="Installation" href="/docs/installation" description="Learn how to install and configure LibyUI" />
-  <Card title="Theming" href="/docs/theming" description="Customize the look and feel of your components" />
-  <Card title="Examples" href="/docs/examples" description="See real-world usage examples and patterns" />
+  <Card title="Components" href="/docs/components" description="Primitives and composite components — the core building blocks of every UI." />
+  <Card title="Blocks" href="/docs/blocks" description="Pre-built layout sections you can copy, paste, and customize instantly." />
+  <Card title="Modules" href="/docs/modules" description="Higher-level feature modules like data tables and form systems." />
+  <Card title="Patterns" href="/docs/patterns" description="Proven design and composition patterns for common UI challenges." />
+  <Card title="Recipes" href="/docs/recipes" description="Step-by-step recipes for building real-world features with LibyUI." />
+  <Card title="Tooling" href="/docs/tooling" description="CLI, TypeScript config, linting, and the developer toolchain." />
 </Cards>
+
+<FeedbackBlock>
+Was this introduction helpful? Let us know — your feedback shapes the docs.
+</FeedbackBlock>

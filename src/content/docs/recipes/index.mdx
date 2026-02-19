@@ -1,10 +1,37 @@
 ---
 title: Recipes
-description: Ready-to-use recipes and examples for common use cases
+description: Step-by-step recipes for building real-world features and UI flows with LibyUI.
+root: true
 icon: ChefHat
 ---
 
 # Recipes
 
-Learn about ready-to-use recipes and examples for common use cases.
- 
+Recipes are step-by-step, copy-paste-ready guides for building real-world features with LibyUI. Each recipe walks you through a concrete goal — from start to finished, working code.
+
+<Accordions>
+  <Accordion title="What is a recipe?">
+    A recipe is an end-to-end walkthrough for a specific UI task. It starts from a clear goal ("build a delete confirmation modal"), lists the components you'll need, and provides complete, working code you can drop into your project.
+  </Accordion>
+  <Accordion title="Recipes vs. Patterns">
+    Recipes are concrete and opinionated — they show one good way to solve a specific problem. Patterns are conceptual and explore the trade-offs across multiple approaches. Use recipes when you want something working fast; use patterns when you're deciding on an approach.
+  </Accordion>
+  <Accordion title="Can I request a recipe?">
+    Yes. Open an issue on GitHub with the title "Recipe Request: [your topic]" and describe what you're trying to build. High-demand requests get prioritized.
+  </Accordion>
+</Accordions>
+
+## Planned Recipes
+
+<Cards>
+  <Card title="Delete Confirmation Modal" href="/docs/recipes" description="A safe, accessible delete flow using a Dialog, Button variants, and a toast notification." />
+  <Card title="Multi-step Onboarding Form" href="/docs/recipes" description="Guide new users through setup steps with a validated, multi-page form." />
+  <Card title="Data Table with Search & Filter" href="/docs/recipes" description="Wire up the Data Table module with a search input and dropdown filters." />
+  <Card title="Dark Mode Toggle" href="/docs/recipes" description="Implement the Mode Toggle composite component with next-themes in a Next.js app." />
+  <Card title="Copy to Clipboard Button" href="/docs/recipes" description="A Button that copies text and shows a success state using LibyUI's success variant." />
+  <Card title="Infinite Scroll Feed" href="/docs/recipes" description="Load more items as the user scrolls using an intersection observer and Card components." />
+</Cards>
+
+<FeedbackBlock>
+Recipes are actively being written. Which would help you most right now? Let us know.
+</FeedbackBlock>

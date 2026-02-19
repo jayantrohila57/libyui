@@ -1,90 +1,117 @@
 ---
 title: Blocks
-description: Pre-built layout blocks and sections for rapid development
-icon: Layout
+description: Pre-built layout sections you can copy, paste, and customize instantly.
+root: true
+icon: LayoutDashboard
 ---
 
 # Blocks
 
-Blocks are pre-built, reusable layout components that help you create beautiful and functional sections of your application quickly. They combine multiple components into cohesive layouts that follow best practices for design and accessibility.
+Blocks are pre-built, reusable layout sections that combine multiple components into cohesive, production-ready parts of your UI. They follow best practices for design, accessibility, and responsiveness — so you can ship faster without starting from scratch.
 
-## Why Use Blocks?
+## How blocks work
 
-- **🚀 Rapid Development**: Skip the repetitive work of building common layouts
-- **🎨 Consistent Design**: Maintain visual consistency across your application
-- **📱 Responsive**: All blocks are mobile-first and work seamlessly across devices
-- **♿ Accessible**: Built with accessibility standards in mind
-- **🔧 Customizable**: Easy to modify with Tailwind CSS classes and props
+<Steps>
+  <Step>Browse the block category that matches your need</Step>
+  <Step>Copy the block code into your project</Step>
+  <Step>Customize colors, copy, and layout using Tailwind CSS and props</Step>
+</Steps>
+
+## Common questions
+
+<Accordions>
+  <Accordion title="Are blocks just components?">
+    Blocks are compositions of multiple components, not standalone primitives. A Hero block, for example, might use `Button`, `Card`, and typography elements together to form a complete page section.
+  </Accordion>
+  <Accordion title="Can I use only part of a block?">
+    Yes. Blocks are not packaged exports — they are code you copy into your project. Feel free to extract only the parts you need and adjust the markup freely.
+  </Accordion>
+  <Accordion title="Are blocks responsive?">
+    All blocks are mobile-first. They are designed to look great at every breakpoint out of the box, though you can easily adjust breakpoints via Tailwind utilities.
+  </Accordion>
+  <Accordion title="Do blocks follow accessibility standards?">
+    Yes. Blocks use semantic HTML and LibyUI's accessible primitive components. Navigation blocks use `<nav>`, form blocks use proper `<label>` associations, and so on.
+  </Accordion>
+</Accordions>
+
+---
 
 ## Block Categories
 
+### Authentication
+
+- **[Auth Block](/docs/blocks/auth)** — Sign-in and registration form layouts
+
 ### Hero Sections
 
-- **[Hero Center](/docs/blocks/hero-center)** - Centered hero with headline and call-to-action
-- **[Hero Split](/docs/blocks/hero-split)** - Split layout with image and content
-- **[Hero Feature](/docs/blocks/hero-feature)** - Feature-focused hero with highlights
-- **[Hero Minimal](/docs/blocks/hero-minimal)** - Clean, minimal hero design
+- **[Hero Center](/docs/blocks/hero-center)** — Centered hero with headline and call-to-action
+- **[Hero Split](/docs/blocks/hero-split)** — Split layout with image and content
+- **[Hero Feature](/docs/blocks/hero-feature)** — Feature-focused hero with highlights
+- **[Hero Minimal](/docs/blocks/hero-minimal)** — Clean, minimal hero design
 
-### Navigation Blocks
+### Navigation
 
-- **[Navbar Simple](/docs/blocks/navbar-simple)** - Clean navigation with logo and menu
-- **[Navbar Centered](/docs/blocks/navbar-centered)** - Centered navigation with search
-- **[Navbar Sidebar](/docs/blocks/navbar-sidebar)** - Collapsible sidebar navigation
-- **[Navbar Mega](/docs/blocks/navbar-mega)** - Mega menu with categories
+- **[Navbar Simple](/docs/blocks/navbar-simple)** — Clean navigation with logo and menu
+- **[Navbar Centered](/docs/blocks/navbar-centered)** — Centered navigation with search
+- **[Navbar Sidebar](/docs/blocks/navbar-sidebar)** — Collapsible sidebar navigation
+- **[Navbar Mega](/docs/blocks/navbar-mega)** — Mega menu with categories
 
-### Feature Sections
+### Features
 
-- **[Features Grid](/docs/blocks/features-grid)** - Grid layout for feature highlights
-- **[Features List](/docs/blocks/features-list)** - Vertical list with icons
-- **[Features Cards](/docs/blocks/features-cards)** - Card-based feature display
-- **[Features Tabs](/docs/blocks/features-tabs)** - Tabbed feature content
+- **[Features Grid](/docs/blocks/features-grid)** — Grid layout for feature highlights
+- **[Features List](/docs/blocks/features-list)** — Vertical list with icons
+- **[Features Cards](/docs/blocks/features-cards)** — Card-based feature display
+- **[Features Tabs](/docs/blocks/features-tabs)** — Tabbed feature content
 
-### Content Sections
+### Content
 
-- **[Content Split](/docs/blocks/content-split)** - Text and image side-by-side
-- **[Content Center](/docs/blocks/content-center)** - Centered content layout
-- **[Content Grid](/docs/blocks/content-grid)** - Multi-column content grid
-- **[Content Testimonial](/docs/blocks/content-testimonial)** - Testimonial-focused layout
+- **[Content Split](/docs/blocks/content-split)** — Text and image side-by-side
+- **[Content Center](/docs/blocks/content-center)** — Centered content layout
+- **[Content Grid](/docs/blocks/content-grid)** — Multi-column content grid
+- **[Content Testimonial](/docs/blocks/content-testimonial)** — Testimonial-focused layout
 
-### Pricing Sections
+### Pricing
 
-- **[Pricing Cards](/docs/blocks/pricing-cards)** - Card-based pricing plans
-- **[Pricing Table](/docs/blocks/pricing-table)** - Table pricing comparison
-- **[Pricing Toggle](/docs/blocks/pricing-toggle)** - Monthly/yearly toggle
-- **[Pricing Feature](/docs/blocks/pricing-feature)** - Feature-focused pricing
+- **[Pricing Cards](/docs/blocks/pricing-cards)** — Card-based pricing plans
+- **[Pricing Comparison](/docs/blocks/pricing-table)** — Table-based plan comparison
+- **[Pricing Toggle](/docs/blocks/pricing-toggle)** — Monthly/yearly billing toggle
+- **[Pricing Feature](/docs/blocks/pricing-feature)** — Feature-focused pricing layout
 
-### Team Sections
+### Team
 
-- **[Team Grid](/docs/blocks/team-grid)** - Grid layout for team members
-- **[Team Cards](/docs/blocks/team-cards)** - Card-based team display
-- **[Team List](/docs/blocks/team-list)** - Vertical team member list
-- **[Team Social](/docs/blocks/team-social)** - Team with social links
+- **[Team Grid](/docs/blocks/team-grid)** — Grid layout for team members
+- **[Team Cards](/docs/blocks/team-cards)** — Card-based team display
+- **[Team List](/docs/blocks/team-list)** — Vertical team member list
+- **[Team Social](/docs/blocks/team-social)** — Team with social media links
 
-### Footer Blocks
+### Footer
 
-- **[Footer Simple](/docs/blocks/footer-simple)** - Clean footer with links
-- **[Footer Multi](/docs/blocks/footer-multi)** - Multi-column footer layout
-- **[Footer Minimal](/docs/blocks/footer-minimal)** - Minimal footer design
-- **[Footer Newsletter](/docs/blocks/footer-newsletter)** - Footer with newsletter signup
+- **[Footer Simple](/docs/blocks/footer-simple)** — Clean footer with links
+- **[Footer Multi-column](/docs/blocks/footer-multi)** — Multi-column footer layout
+- **[Footer Minimal](/docs/blocks/footer-minimal)** — Minimal footer design
+- **[Footer Newsletter](/docs/blocks/footer-newsletter)** — Footer with newsletter signup
 
-### Form Sections
+### Forms
 
-- **[Contact Form](/docs/blocks/contact-form)** - Complete contact form layout
-- **[Newsletter Form](/docs/blocks/newsletter-form)** - Newsletter signup section
-- **[Search Form](/docs/blocks/search-form)** - Search interface layout
-- **[Login Form](/docs/blocks/login-form)** - Authentication form design
+- **[Contact Form](/docs/blocks/contact-form)** — Complete contact form layout
+- **[Newsletter Form](/docs/blocks/newsletter-form)** — Newsletter signup section
+- **[Search Form](/docs/blocks/search-form)** — Search interface layout
+- **[Login Form](/docs/blocks/login-form)** — Authentication form design
 
-### Blog Sections
+### Blog
 
-- **[Blog Grid](/docs/blocks/blog-grid)** - Grid layout for blog posts
-- **[Blog List](/docs/blocks/blog-list)** - List layout for articles
-- **[Blog Card](/docs/blocks/blog-card)** - Card-based blog display
-- **[Blog Hero](/docs/blocks/blog-hero)** - Featured article hero
+- **[Blog Grid](/docs/blocks/blog-grid)** — Grid layout for blog posts
+- **[Blog List](/docs/blocks/blog-list)** — List layout for articles
+- **[Blog Card](/docs/blocks/blog-card)** — Card-based blog display
+- **[Blog Hero](/docs/blocks/blog-hero)** — Featured article hero
 
-### Stats Sections
+### Stats
 
-- **[Stats Grid](/docs/blocks/stats-grid)** - Grid layout for statistics
-- **[Stats Counter](/docs/blocks/stats-counter)** - Animated counter display
-- **[Stats Progress](/docs/blocks/stats-progress)** - Progress-based statistics
-- **[Stats Chart](/docs/blocks/stats-chart)** - Chart-based statistics
+- **[Stats Grid](/docs/blocks/stats-grid)** — Grid layout for key statistics
+- **[Stats Counter](/docs/blocks/stats-counter)** — Animated counter display
+- **[Stats Progress](/docs/blocks/stats-progress)** — Progress-based statistics
+- **[Stats Chart](/docs/blocks/stats-chart)** — Chart-based statistics
 
+<FeedbackBlock>
+Have a block type you'd like to see added? Open an issue or start a discussion on GitHub.
+</FeedbackBlock>

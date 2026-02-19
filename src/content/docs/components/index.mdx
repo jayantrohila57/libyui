@@ -1,30 +1,38 @@
 ---
 title: All Components
-description: Complete list of available LibyUI components
+description: Primitive and composite components — the core building blocks of every LibyUI interface.
 root: true
 icon: Boxes
 ---
 
+# Components
 
-# Primitives
+LibyUI components are organized into two layers: **Primitives** and **Composite** components. Primitives are low-level, single-responsibility elements. Composite components combine primitives into higher-level, opinionated patterns.
+
+## Primitives
+
+Primitives are unstyled-first, accessibility-compliant building blocks. Each one maps closely to a Radix UI primitive and is extended with LibyUI variants, sizes, and design tokens.
 
 <Cards>
-  <Card title="Button" href="/docs/components/button" description="Interactive button with multiple variants and sizes" />
-  <Card title="Card" href="/docs/components/card" description="Flexible card component with header, content, footer, and action sections" />
-  <Card title="Separator" href="/docs/components/separator" description="Visual separator component for dividing content sections" />
+  <Card title="Button" href="/docs/components/button" description="Interactive button with multiple variants (default, destructive, success, info, outline, ghost, link) and sizes." />
+  <Card title="Card" href="/docs/components/card" description="Flexible container with Header, Title, Description, Content, Footer, and Action sub-components." />
+  <Card title="Separator" href="/docs/components/separator" description="Horizontal or vertical visual divider for structuring content sections." />
 </Cards>
 
 <FeedbackBlock>
-This section explains how Primitives components work in LibyUI.
+These are the currently documented primitive components. More are being added — check back soon or open a GitHub discussion to request one.
 </FeedbackBlock>
+
 ---
 
-# Composite
- 
+## Composite
+
+Composite components are built from primitives and third-party libraries. They solve a specific, higher-level UI pattern out of the box.
+
 <Cards>
-  <Card title="Mode Toggle" href="/docs/components/mode-toggle" description="Interactive mode toggle component for switching between light and dark modes" />
+  <Card title="Mode Toggle" href="/docs/components/mode-toggle" description="Light / dark / system theme switcher built with next-themes, Radix Dropdown, and Tooltip." />
 </Cards>
- 
- <FeedbackBlock>
-This section explains how Composite components work in LibyUI.
+
+<FeedbackBlock>
+Composite components are growing. Have a pattern you'd like to see here? Open an issue on GitHub.
 </FeedbackBlock>

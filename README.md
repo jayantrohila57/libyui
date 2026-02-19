@@ -1,57 +1,89 @@
 # LibyUI
 
-LibyUI is a modern, accessible, and beautifully designed React component library built with TypeScript and Tailwind CSS. Our components are crafted to help you build stunning web applications with ease and confidence.
+**Build Beautiful UI Components. Ship Faster.**
 
-## Features
+LibyUI is a modern, accessible, and beautifully designed React component library built with TypeScript and Tailwind CSS. It provides components, blocks, modules, and patterns to help you build stunning web applications with confidence.
 
-- **🎨 Beautiful Design**: Thoughtfully crafted components with a modern aesthetic
-- **♿ Accessible**: Built with accessibility in mind, following WCAG guidelines
-- **🔧 TypeScript First**: Full TypeScript support for better developer experience
-- **🎭 Customizable**: Easy to customize with Tailwind CSS classes and design tokens
-- **📱 Responsive**: Mobile-first design that works seamlessly across all devices
+- **Beautiful by default** — Thoughtfully crafted components with a modern aesthetic
+- **Accessible** — Built on Radix UI primitives, following WCAG 2.1 guidelines
+- **TypeScript-first** — Full type safety with autocomplete for all props, variants, and sizes
+- **Customizable** — Override anything with Tailwind CSS classes via `className`
+- **Mobile-first** — Responsive design that works seamlessly across all devices
 
+## Tech Stack
 
-## Development
+| Tool | Purpose |
+|------|---------|
+| [Next.js 16](https://nextjs.org) | App framework |
+| [fumadocs-ui](https://fumadocs.dev) | Documentation UI and MDX pipeline |
+| [Radix UI](https://radix-ui.com) | Accessible primitive components |
+| [Tailwind CSS v4](https://tailwindcss.com) | Utility-first styling |
+| [TypeScript](https://typescriptlang.org) | Type safety |
+| [Biome](https://biomejs.dev) | Linting and formatting |
 
-Run the documentation site:
+## Getting Started
 
 ```bash
-npm run dev
-# or
+pnpm install
 pnpm dev
-# or
-yarn dev
 ```
 
-Open http://localhost:3000 with your browser to see the documentation and examples.
+Open [http://localhost:3000](http://localhost:3000) to view the documentation site.
 
 ## Project Structure
 
-In the project, you can see:
+```
+src/
+├── site.config.ts          # Single source of truth — name, GitHub, nav, doc sections
+├── app/
+│   ├── (home)/             # Landing page
+│   └── (docs)/docs/        # Documentation layout and pages
+├── components/
+│   ├── ui/                 # LibyUI primitive components (Button, Card, Separator…)
+│   └── mdx/                # MDX component registry
+├── content/docs/           # MDX documentation files
+│   ├── index.mdx           # Welcome page
+│   ├── Introduction/       # Getting started guide
+│   ├── components/         # Component docs (Primitives + Composite)
+│   ├── blocks/             # Pre-built layout block docs
+│   ├── modules/            # Feature module docs (Data Table, Data Forms)
+│   ├── patterns/           # Design pattern guides
+│   ├── recipes/            # Step-by-step implementation recipes
+│   └── tooling/            # CLI, TypeScript, Biome, Tailwind setup
+├── module/
+│   ├── docs/               # fumadocs source loader and page utilities
+│   ├── common/             # Shared layout and component preview helpers
+│   └── github/             # GitHub API integration and git config
+└── lib/                    # Env validation, utilities, RSS
+```
 
-- `src/components/`: React component library source code
-- `src/content/docs/`: Documentation files written in MDX
-- `lib/source.ts`: Code for content source adapter, [`loader()`](https://fumadocs.dev/docs/headless/source-api) provides the interface to access your content.
-- `lib/layout.shared.tsx`: Shared options for layouts, optional but preferred to keep.
+## Documentation Sections
 
-| Route                     | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| `app/(home)`              | The route group for your landing page and other pages. |
-| `app/docs`                | The documentation layout and pages.                    |
-| `app/api/search/route.ts` | The Route Handler for search.                          |
+| Section | Description |
+|---------|------------|
+| [Introduction](/docs/Introduction) | What LibyUI is and how to install it |
+| [Components](/docs/components) | Primitive and composite UI components |
+| [Blocks](/docs/blocks) | Copy-paste layout sections |
+| [Modules](/docs/modules) | Feature-complete modules (Data Table, Data Forms) |
+| [Patterns](/docs/patterns) | Design and composition patterns |
+| [Recipes](/docs/recipes) | Step-by-step real-world feature guides |
+| [Tooling](/docs/tooling) | CLI, TypeScript, Biome, and Tailwind setup |
 
-### Fumadocs MDX
+## Scripts
 
-A `source.config.ts` config file has been included, you can customise different options like frontmatter schema.
+```bash
+pnpm dev          # Start the development server
+pnpm build        # Build for production
+pnpm lint         # Run Biome linter
+pnpm format       # Auto-fix formatting with Biome
+pnpm shadcn       # Add or update components via the shadcn CLI
+pnpm types:check  # Type-check the entire project
+```
 
-Read the [Introduction](https://fumadocs.dev/docs/mdx) for further details.
+## Configuration
 
-## Learn More
+All app-wide settings (name, description, GitHub repo, nav links, doc sections) are defined in [`src/site.config.ts`](./src/site.config.ts). Edit that file as the single source of truth rather than updating individual layout or metadata files.
 
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.dev) - learn about Fumadocs
+MIT — see [LICENSE](./LICENSE) for details.
