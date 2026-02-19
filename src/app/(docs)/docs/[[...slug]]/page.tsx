@@ -6,6 +6,7 @@ import {
   EditOnGitHub,
 } from "fumadocs-ui/layouts/notebook/page";
 import { createRelativeLink } from "fumadocs-ui/mdx";
+import { ClockIcon } from "lucide-react";
 import { DynamicIcon, type IconName } from "lucide-react/dynamic";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -47,7 +48,7 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
           markdownUrl={`${page.url}.mdx`}
           githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${page.path}`}
         />
-        <EditOnGitHub />
+        <EditOnGitHub href={`https://github.com/${gitConfig.user}/${gitConfig.repo}/edit/${gitConfig.branch}/content/docs/${page.path}`} />
       </div>
       <Separator />
       <DocsBody className="">
@@ -60,7 +61,7 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
       <Feedback onSendAction={onPageFeedbackAction} />
       {lastEdit && (
         <p className="text-sm text-muted-foreground flex items-center gap-2">
-          <DynamicIcon name={iconName} />
+          <ClockIcon className="size-4" />
           Last updated on {new Date(lastEdit).toLocaleDateString()}
         </p>
       )}
