@@ -249,18 +249,16 @@ export function FeedbackBlock({
       <div className="relative group/feedback">
         <div
           className={cn(
-            "absolute -inset-1 rounded-sm pointer-events-none transition-colors duration-100 z-[-1]",
-            open
-              ? "bg-fd-accent"
-              : "group-hover/feedback:bg-fd-accent group-hover/feedback:delay-100",
+            "absolute -inset-1 pointer-events-none transition-colors z-[-1]",
+            open ? "border-b" : "group-hover/feedback:border-b",
           )}
         />
         <PopoverTrigger
           className={cn(
             buttonVariants({ variant: "secondary", size: "sm" }),
-            "absolute -top-7 end-0 backdrop-blur-sm text-fd-muted-foreground gap-1.5 transition-all duration-100 data-[state=open]:bg-fd-accent data-[state=open]:text-fd-accent-foreground",
+            "absolute top-0 border end-0 backdrop-blur-sm text-fd-muted-foreground gap-1.5 transition-all  data-[state=open]:bg-fd-accent data-[state=open]:text-fd-accent-foreground",
             !open &&
-              "opacity-0 pointer-events-none group-hover/feedback:pointer-events-auto group-hover/feedback:opacity-100 group-hover/feedback:delay-100 hover:pointer-events-auto hover:opacity-100 hover:delay-100",
+              "opacity-0 pointer-events-none group-hover/feedback:pointer-events-auto group-hover/feedback:opacity-100 group-hover/feedback:delay-100 hover:pointer-events-auto hover:opacity-100 ",
           )}
           onClick={(e) => {
             setOpen((prev) => !prev);

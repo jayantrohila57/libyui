@@ -4,6 +4,7 @@ import "server-only";
 const envServerSchema = z.object({
   GITHUB_APP_ID: z.string(),
   GITHUB_APP_PRIVATE_KEY: z.string(),
+  GIT_TOKEN: z.string(),
 });
 
 export type Env = z.infer<typeof envServerSchema>;

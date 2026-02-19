@@ -1,4 +1,4 @@
-import { envClient } from "@/lib/env";
+import { envClient } from "@/lib/env-client";
 import { docsSource } from "@/module/docs/docs.options";
 
 export default async function sitemap() {

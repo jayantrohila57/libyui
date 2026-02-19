@@ -13,11 +13,12 @@ import { LLMCopyButton, ViewOptions } from "@/components/ai/page-actions";
 import { Feedback } from "@/components/feedback/client";
 import { getMDXComponents } from "@/components/mdx/mdx-components";
 import { Separator } from "@/components/ui/separator";
-import { envClient } from "@/lib/env";
+import { envClient } from "@/lib/env-client";
 import { camelToSlug } from "@/lib/utils";
 import { docsSource, getPageImage } from "@/module/docs/docs.options";
 import { gitConfig } from "@/module/github/git.config";
 import { onPageFeedbackAction } from "@/module/github/github";
+import { getLastEditTime } from "@/module/github/last-edit";
 
 export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
   const params = await props.params;
@@ -25,6 +26,8 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
   if (!page) notFound();
   const MDX = page.data.body;
   const iconName = camelToSlug(page.data.icon) as IconName;
+  const lastEdit = await getLastEditTime(page.path);
+
   return (
     <DocsPage className="" toc={page.data.toc} full={page.data.full}>
       <div className="flex flex-col">
@@ -55,6 +58,12 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
         />
       </DocsBody>
       <Feedback onSendAction={onPageFeedbackAction} />
+      {lastEdit && (
+        <p className="text-sm text-muted-foreground flex items-center gap-2">
+          <DynamicIcon name={iconName} />
+          Last updated on {new Date(lastEdit).toLocaleDateString()}
+        </p>
+      )}
     </DocsPage>
   );
 }

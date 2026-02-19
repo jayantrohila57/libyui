@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { envClient } from "@/lib/env";
+import { envClient } from "@/lib/env-client";
 
 export const metadata: Metadata = {
   metadataBase: new URL(envClient.NEXT_PUBLIC_BASE_URL),

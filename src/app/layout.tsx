@@ -2,7 +2,7 @@ import { RootProvider } from "fumadocs-ui/provider/next";
 import "./global.css";
 import type { Metadata, Viewport } from "next";
 import { Red_Hat_Display } from "next/font/google";
-import { envClient } from "@/lib/env";
+import { envClient } from "@/lib/env-client";
 
 const redHatDisplay = Red_Hat_Display({
   subsets: ["latin"],
@@ -43,6 +43,16 @@ export const metadata: Metadata = {
     description:
       "LibyUI is your comprehensive React component library for building modern, accessible, and stunning user interfaces with ease.",
     images: [`${envClient.NEXT_PUBLIC_BASE_URL}/opengraph-image`],
+  },
+  alternates: {
+    types: {
+      "application/rss+xml": [
+        {
+          title: "LibyUI Documentation",
+          url: `${envClient.NEXT_PUBLIC_BASE_URL}/rss.xml`,
+        },
+      ],
+    },
   },
 };
 
