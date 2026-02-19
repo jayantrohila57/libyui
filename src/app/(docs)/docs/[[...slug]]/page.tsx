@@ -33,7 +33,7 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
     <DocsPage className="" toc={page.data.toc} full={page.data.full}>
       <div className="flex flex-col">
         <div className=" flex flex-row items-center gap-2">
-          <div className="rounded-(--radius) mx-0 flex w-fit items-center border p-1 ">
+          <div className="rounded-lg mx-0 flex w-fit items-center border p-1 ">
             <span className="bg-muted rounded-[calc(var(--radius)-0.25rem)] p-1 text-xs">
               <DynamicIcon name={iconName} className="size-4" />
             </span>

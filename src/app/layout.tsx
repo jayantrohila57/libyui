@@ -1,5 +1,7 @@
-import { RootProvider } from "fumadocs-ui/provider/next";
 import "./global.css";
+
+import { Analytics } from "@vercel/analytics/next";
+import { RootProvider } from "fumadocs-ui/provider/next";
 import type { Metadata, Viewport } from "next";
 import { Red_Hat_Display } from "next/font/google";
 import { envClient } from "@/lib/env-client";
@@ -64,7 +66,10 @@ export default function Layout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <body className="flex flex-col min-h-screen">
-        <RootProvider>{children}</RootProvider>
+        <RootProvider>
+          {children}
+          <Analytics mode="auto" />
+        </RootProvider>
       </body>
     </html>
   );

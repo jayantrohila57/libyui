@@ -4,6 +4,12 @@ description: Pre-built layout sections you can copy, paste, and customize instan
 root: true
 icon: LayoutDashboard
 ---
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 # Blocks
 
@@ -19,20 +25,32 @@ Blocks are pre-built, reusable layout sections that combine multiple components 
 
 ## Common questions
 
-<Accordions>
-  <Accordion title="Are blocks just components?">
-    Blocks are compositions of multiple components, not standalone primitives. A Hero block, for example, might use `Button`, `Card`, and typography elements together to form a complete page section.
-  </Accordion>
-  <Accordion title="Can I use only part of a block?">
-    Yes. Blocks are not packaged exports — they are code you copy into your project. Feel free to extract only the parts you need and adjust the markup freely.
-  </Accordion>
-  <Accordion title="Are blocks responsive?">
-    All blocks are mobile-first. They are designed to look great at every breakpoint out of the box, though you can easily adjust breakpoints via Tailwind utilities.
-  </Accordion>
-  <Accordion title="Do blocks follow accessibility standards?">
-    Yes. Blocks use semantic HTML and LibyUI's accessible primitive components. Navigation blocks use `<nav>`, form blocks use proper `<label>` associations, and so on.
-  </Accordion>
-</Accordions>
+<Accordion type="single" collapsible className="w-full">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Are blocks just components?</AccordionTrigger>
+    <AccordionContent>
+      Blocks are compositions of multiple components, not standalone primitives. A Hero block, for example, might use `Button`, `Card`, and typography elements together to form a complete page section.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Can I use only part of a block?</AccordionTrigger>
+    <AccordionContent>
+      Yes. Blocks are not packaged exports — they are code you copy into your project. Feel free to extract only the parts you need and adjust the markup freely.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-3">
+    <AccordionTrigger>Are blocks responsive?</AccordionTrigger>
+    <AccordionContent>
+      All blocks are mobile-first. They are designed to look great at every breakpoint out of the box, though you can easily adjust breakpoints via Tailwind utilities.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-4">
+    <AccordionTrigger>Do blocks follow accessibility standards?</AccordionTrigger>
+    <AccordionContent>
+      Yes. Blocks use semantic HTML and LibyUI's accessible primitive components. Navigation blocks use `<nav>`, form blocks use proper `<label>` associations, and so on.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
 
 ---
 

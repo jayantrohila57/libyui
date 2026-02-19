@@ -4,30 +4,72 @@ description: Proven design and composition patterns for solving common UI challe
 root: true
 icon: Waypoints
 ---
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 # Patterns
 
 Patterns document proven, repeatable solutions to common UI design and composition problems. Unlike components (which solve a single element) or blocks (which solve a layout section), patterns show you *how to think* about combining LibyUI building blocks for recurring scenarios.
 
-<Accordions>
-  <Accordion title="What makes something a pattern?">
-    A pattern is a reusable approach — not a specific piece of code — that solves a class of problems. It describes the intent, the trade-offs, and the recommended composition, leaving implementation details to you.
-  </Accordion>
-  <Accordion title="Patterns vs. Recipes">
-    Patterns are conceptual and broad (e.g. "loading states", "empty states", "confirmation flows"). Recipes are concrete and step-by-step (e.g. "build a delete confirmation dialog with a toast notification"). Use patterns for guidance, recipes for copy-paste starting points.
-  </Accordion>
-</Accordions>
+<Accordion type="single" collapsible className="w-full">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>What makes something a pattern?</AccordionTrigger>
+    <AccordionContent>
+      A pattern is a reusable approach — not a specific piece of code — that solves a class of problems. It describes the intent, the trade-offs, and the recommended composition, leaving implementation details to you.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Patterns vs. Recipes</AccordionTrigger>
+    <AccordionContent>
+      Patterns are conceptual and broad (e.g. "loading states", "empty states", "confirmation flows"). Recipes are concrete and step-by-step (e.g. "build a delete confirmation dialog with a toast notification"). Use patterns for guidance, recipes for copy-paste starting points.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
 
 ## Planned Patterns
 
-<Cards>
-  <Card title="Loading States" href="/docs/patterns" description="Skeleton screens, spinners, and optimistic UI patterns for async data." />
-  <Card title="Empty States" href="/docs/patterns" description="Designing for zero-data: placeholders, CTAs, and onboarding prompts." />
-  <Card title="Confirmation Flows" href="/docs/patterns" description="Destructive actions, dialogs, and undo patterns done right." />
-  <Card title="Error Boundaries" href="/docs/patterns" description="Graceful degradation — catching errors in UI trees without crashing the page." />
-  <Card title="Form Validation UX" href="/docs/patterns" description="When and how to show validation errors for the best user experience." />
-  <Card title="Responsive Navigation" href="/docs/patterns" description="Adapting sidebar, navbar, and drawer navigation across breakpoints." />
-</Cards>
+<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <li>
+    <a href="/docs/patterns" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Loading States</h3>
+      <p className="text-gray-600">Skeleton screens, spinners, and optimistic UI patterns for async data.</p>
+    </a>
+  </li>
+  <li>
+    <a href="/docs/patterns" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Empty States</h3>
+      <p className="text-gray-600">Designing for zero-data: placeholders, CTAs, and onboarding prompts.</p>
+    </a>
+  </li>
+  <li>
+    <a href="/docs/patterns" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Confirmation Flows</h3>
+      <p className="text-gray-600">Destructive actions, dialogs, and undo patterns done right.</p>
+    </a>
+  </li>
+  <li>
+    <a href="/docs/patterns" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Error Boundaries</h3>
+      <p className="text-gray-600">Graceful degradation — catching errors in UI trees without crashing the page.</p>
+    </a>
+  </li>
+  <li>
+    <a href="/docs/patterns" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Form Validation UX</h3>
+      <p className="text-gray-600">When and how to show validation errors for the best user experience.</p>
+    </a>
+  </li>
+  <li>
+    <a href="/docs/patterns" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Responsive Navigation</h3>
+      <p className="text-gray-600">Adapting sidebar, navbar, and drawer navigation across breakpoints.</p>
+    </a>
+  </li>
+</ul>
 
 <FeedbackBlock>
 Patterns are actively being written. Which pattern would be most useful to you right now? Leave a comment.

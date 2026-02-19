@@ -3,6 +3,12 @@ title: Data Table
 description: A sortable, filterable, and paginated data table built from LibyUI components.
 icon: Table
 ---
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 # Data Table
 
@@ -10,23 +16,38 @@ The Data Table module provides a fully featured, accessible data table for displ
 
 ## Key concepts
 
-<Accordions>
-  <Accordion title="Column definitions">
-    Columns are defined as configuration objects — you specify the key, a header label, an optional render function, and sort/filter behaviour per column. This keeps table markup clean and data-driven.
-  </Accordion>
-  <Accordion title="Sorting">
-    Click any sortable column header to toggle ascending/descending order. Sort state is controlled and can be lifted to the page level for URL-synced sorting.
-  </Accordion>
-  <Accordion title="Filtering">
-    Pass a `filter` value and the table handles client-side filtering across all searchable columns. For server-side filtering, pass a controlled `onFilterChange` callback and handle the query in your data fetching layer.
-  </Accordion>
-  <Accordion title="Pagination">
-    The table includes a built-in pagination bar. Configure `pageSize` and `totalRows` to enable server-side pagination, or leave them off for automatic client-side paging.
-  </Accordion>
-  <Accordion title="Row selection">
-    Enable `selectable` to add checkboxes to each row and a "select all" header checkbox. Selected row IDs are available via the `onSelectionChange` callback.
-  </Accordion>
-</Accordions>
+<Accordion type="single" collapsible className="w-full">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Column definitions</AccordionTrigger>
+    <AccordionContent>
+      Columns are defined as configuration objects — you specify the key, a header label, an optional render function, and sort/filter behaviour per column. This keeps table markup clean and data-driven.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Sorting</AccordionTrigger>
+    <AccordionContent>
+      Click any sortable column header to toggle ascending/descending order. Sort state is controlled and can be lifted to the page level for URL-synced sorting.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-3">
+    <AccordionTrigger>Filtering</AccordionTrigger>
+    <AccordionContent>
+      Pass a `filter` value and the table handles client-side filtering across all searchable columns. For server-side filtering, pass a controlled `onFilterChange` callback and handle the query in your data fetching layer.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-4">
+    <AccordionTrigger>Pagination</AccordionTrigger>
+    <AccordionContent>
+      The table includes a built-in pagination bar. Configure `pageSize` and `totalRows` to enable server-side pagination, or leave them off for automatic client-side paging.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-5">
+    <AccordionTrigger>Row selection</AccordionTrigger>
+    <AccordionContent>
+      Enable `selectable` to add checkboxes to each row and a "select all" header checkbox. Selected row IDs are available via the `onSelectionChange` callback.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
 
 ## Basic Usage
 
@@ -47,9 +68,14 @@ const data = [
 
 ## Next steps
 
-<Cards>
-  <Card title="Data Forms" href="/docs/modules/data-forms" description="Build validated, schema-driven forms using LibyUI components." />
-</Cards>
+<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <li>
+    <a href="/docs/modules/data-forms" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Data Forms</h3>
+      <p className="text-gray-600">Build validated, schema-driven forms using LibyUI components.</p>
+    </a>
+  </li>
+</ul>
 
 <FeedbackBlock>
 Have feedback on the Data Table module or want to request a feature? Let us know.

@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
+import { CodeCollapsibleWrapper } from "./code-collapsible-wrapper";
 
-const components = {
+export const components = {
   button: dynamic(
     async () => import("@/components/ui/button").then((m) => m.Button),
     { ssr: true },
@@ -41,14 +42,27 @@ const components = {
 
 export type Components = keyof typeof components;
 
-export const ComponentsList = ({
-  component,
+export const ComponentSource = ({
+  name,
+  title,
+  styleName,
+  className,
   ...props
 }: {
-  component: keyof typeof components;
+  name: keyof typeof components;
+  title?: string;
+  styleName?: string;
+  className?: string;
   [key: string]: unknown;
 }) => {
-  const Component = components[component];
+  if (!name) {
+    return null;
+  }
+  const Component = components[name];
 
-  return <Component {...props} />;
+  return (
+    <CodeCollapsibleWrapper className={className}>
+      <Component {...props} />
+    </CodeCollapsibleWrapper>
+  );
 };

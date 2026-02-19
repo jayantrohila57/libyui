@@ -13,11 +13,14 @@ LibyUI components are organized into two layers: **Primitives** and **Composite*
 
 Primitives are unstyled-first, accessibility-compliant building blocks. Each one maps closely to a Radix UI primitive and is extended with LibyUI variants, sizes, and design tokens.
 
-<Cards>
-  <Card title="Button" href="/docs/components/button" description="Interactive button with multiple variants (default, destructive, success, info, outline, ghost, link) and sizes." />
-  <Card title="Card" href="/docs/components/card" description="Flexible container with Header, Title, Description, Content, Footer, and Action sub-components." />
-  <Card title="Separator" href="/docs/components/separator" description="Horizontal or vertical visual divider for structuring content sections." />
-</Cards>
+<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <li>
+    <a href="/docs/components/button" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Button</h3>
+      <p className="text-gray-600">Interactive button with multiple variants (default, destructive, success, info, outline, ghost, link) and sizes.</p>
+    </a>
+  </li>
+</ul>
 
 <FeedbackBlock>
 These are the currently documented primitive components. More are being added â€” check back soon or open a GitHub discussion to request one.
@@ -29,9 +32,14 @@ These are the currently documented primitive components. More are being added â€
 
 Composite components are built from primitives and third-party libraries. They solve a specific, higher-level UI pattern out of the box.
 
-<Cards>
-  <Card title="Mode Toggle" href="/docs/components/mode-toggle" description="Light / dark / system theme switcher built with next-themes, Radix Dropdown, and Tooltip." />
-</Cards>
+<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <li>
+    <a href="/docs/components/mode-toggle" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Mode Toggle</h3>
+      <p className="text-gray-600">Light / dark / system theme switcher built with next-themes, Radix Dropdown, and Tooltip.</p>
+    </a>
+  </li>
+</ul>
 
 <FeedbackBlock>
 Composite components are growing. Have a pattern you'd like to see here? Open an issue on GitHub.

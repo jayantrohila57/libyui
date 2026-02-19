@@ -1,5 +1,12 @@
 {
-  "cSpell.words": ["fumadocs", "jayantrohila", "Liby", "libyui", "llms"],
+  "cSpell.words": [
+    "fumadocs",
+    "jayantrohila",
+    "Liby",
+    "libyui",
+    "llms",
+    "svgl"
+  ],
   "editor.defaultFormatter": "biomejs.biome",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {

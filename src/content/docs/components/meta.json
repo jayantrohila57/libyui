@@ -4,8 +4,6 @@
     "index",
     "---Primitives Components---",
     "(primitives)/button",
-    "(primitives)/card",
-    "(primitives)/separator",
     "---Composite Components---",
     "(composite)/mode-toggle"
   ],

@@ -3,6 +3,12 @@ title: Auth Block
 description: Sign-in and registration form layouts for authentication flows.
 icon: LayoutDashboard
 ---
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 # Auth Block
 
@@ -10,17 +16,26 @@ The Auth block provides ready-to-use layouts for the most common authentication 
 
 ## When to use
 
-<Accordions>
-  <Accordion title="Sign-in layout">
-    Use the sign-in layout when you need a clean, focused login form. It includes an email/password field pair, a "Forgot password" link, and a primary submit button. An optional social login row can be added above or below the form.
-  </Accordion>
-  <Accordion title="Sign-up layout">
-    Use the sign-up layout for new user registration. It includes name, email, password, and confirm-password fields with validation-ready structure and a terms-of-service agreement checkbox.
-  </Accordion>
-  <Accordion title="Password reset layout">
-    Use the password reset layout to request a reset link via email. It provides a minimal, single-field form with a clear call-to-action and a back-to-login link.
-  </Accordion>
-</Accordions>
+<Accordion type="single" collapsible className="w-full">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Sign-in layout</AccordionTrigger>
+    <AccordionContent>
+      Use the sign-in layout when you need a clean, focused login form. It includes an email/password field pair, a "Forgot password" link, and a primary submit button. An optional social login row can be added above or below the form.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Sign-up layout</AccordionTrigger>
+    <AccordionContent>
+      Use the sign-up layout for new user registration. It includes name, email, password, and confirm-password fields with validation-ready structure and a terms-of-service agreement checkbox.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-3">
+    <AccordionTrigger>Password reset layout</AccordionTrigger>
+    <AccordionContent>
+      Use the password reset layout to request a reset link via email. It provides a minimal, single-field form with a clear call-to-action and a back-to-login link.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
 
 ## Usage
 

@@ -3,6 +3,12 @@ title: Data Forms
 description: A validated, schema-driven form system built from LibyUI components for complex data entry flows.
 icon: Form
 ---
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 # Data Forms
 
@@ -10,20 +16,32 @@ The Data Forms module provides a structured, validated approach to building form
 
 ## Key concepts
 
-<Accordions>
-  <Accordion title="Schema-driven fields">
-    Define your form shape with a Zod schema, and the module infers field types, validation rules, and error messages automatically. This eliminates the manual wiring between your validation schema and your form UI.
-  </Accordion>
-  <Accordion title="Controlled vs. uncontrolled inputs">
-    Data Forms supports both patterns. Use controlled inputs when you need to react to field values in real time (for dynamic field sets, conditional sections, etc.), or uncontrolled inputs for simpler, submit-only forms.
-  </Accordion>
-  <Accordion title="Multi-step forms">
-    The module includes a `FormStepper` pattern for multi-step flows. Each step validates independently before advancing, so users see errors exactly when they're relevant.
-  </Accordion>
-  <Accordion title="Error handling">
-    Validation errors are displayed inline, adjacent to the field that triggered them. Error messages come from your Zod schema and are fully customizable per field.
-  </Accordion>
-</Accordions>
+<Accordion type="single" collapsible className="w-full">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Schema-driven fields</AccordionTrigger>
+    <AccordionContent>
+      Define your form shape with a Zod schema, and the module infers field types, validation rules, and error messages automatically. This eliminates the manual wiring between your validation schema and your form UI.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Controlled vs. uncontrolled inputs</AccordionTrigger>
+    <AccordionContent>
+      Data Forms supports both patterns. Use controlled inputs when you need to react to field values in real time (for dynamic field sets, conditional sections, etc.), or uncontrolled inputs for simpler, submit-only forms.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-3">
+    <AccordionTrigger>Multi-step forms</AccordionTrigger>
+    <AccordionContent>
+      The module includes a `FormStepper` pattern for multi-step flows. Each step validates independently before advancing, so users see errors exactly when they're relevant.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-4">
+    <AccordionTrigger>Error handling</AccordionTrigger>
+    <AccordionContent>
+      Validation errors are displayed inline, adjacent to the field that triggered them. Error messages come from your Zod schema and are fully customizable per field.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
 
 ## Basic Usage
 
@@ -40,9 +58,14 @@ const schema = z.object({
 
 ## Next steps
 
-<Cards>
-  <Card title="Data Table" href="/docs/modules/data-table" description="Display, sort, and filter tabular data using LibyUI components." />
-</Cards>
+<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <li>
+    <a href="/docs/modules/data-table" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Data Table</h3>
+      <p className="text-gray-600">Display, sort, and filter tabular data using LibyUI components.</p>
+    </a>
+  </li>
+</ul>
 
 <FeedbackBlock>
 Have feedback on the Data Forms module or want to request a feature? Let us know.

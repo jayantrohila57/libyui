@@ -4,6 +4,12 @@ description: CLI, TypeScript configuration, linting (Biome), and the developer t
 root: true
 icon: Wrench
 ---
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 # Tooling
 
@@ -20,29 +26,61 @@ LibyUI comes with an opinionated but configurable developer toolchain. This sect
 
 ## Toolchain
 
-<Cards>
-  <Card title="CLI" href="/docs/tooling" description="Use the shadcn CLI to add, update, and manage LibyUI components in your project." />
-  <Card title="TypeScript" href="/docs/tooling" description="Path aliases, strict mode, and the TypeScript configuration recommended for LibyUI projects." />
-  <Card title="Biome" href="/docs/tooling" description="The linter and formatter configuration used in LibyUI — fast, zero-config, and opinionated." />
-  <Card title="Tailwind CSS" href="/docs/tooling" description="PostCSS setup, design token structure, and Tailwind configuration for LibyUI." />
-</Cards>
+<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <li>
+    <a href="/docs/tooling" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">CLI</h3>
+      <p className="text-gray-600">Use shadcn CLI to add, update, and manage LibyUI components in your project.</p>
+    </a>
+  </li>
+  <li>
+    <a href="/docs/tooling" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">TypeScript</h3>
+      <p className="text-gray-600">Path aliases, strict mode, and TypeScript configuration recommended for LibyUI projects.</p>
+    </a>
+  </li>
+  <li>
+    <a href="/docs/tooling" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Biome</h3>
+      <p className="text-gray-600">The linter and formatter configuration used in LibyUI — fast, zero-config, and opinionated.</p>
+    </a>
+  </li>
+  <li>
+    <a href="/docs/tooling" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Tailwind CSS</h3>
+      <p className="text-gray-600">PostCSS setup, design token structure, and Tailwind configuration for LibyUI.</p>
+    </a>
+  </li>
+</ul>
 
 ## Common questions
 
-<Accordions>
-  <Accordion title="Do I need the CLI?">
-    No — you can copy component source files manually. The CLI (`pnpm shadcn`) just automates the process of adding components to your project and keeping them up to date.
-  </Accordion>
-  <Accordion title="Do I have to use Biome?">
-    No. LibyUI uses Biome internally for speed and zero-config formatting. You can use ESLint and Prettier instead — nothing in LibyUI depends on your linter choice at runtime.
-  </Accordion>
-  <Accordion title="Can I use LibyUI without TypeScript?">
-    Yes, but you'll lose prop autocompletion and type safety for variants and sizes. TypeScript is strongly recommended for the best developer experience.
-  </Accordion>
-  <Accordion title="What version of Tailwind CSS is required?">
-    LibyUI requires Tailwind CSS v4. It uses the PostCSS plugin (`@tailwindcss/postcss`) and the `tw-animate-css` package for animations. Make sure your `postcss.config.mjs` is configured accordingly.
-  </Accordion>
-</Accordions>
+<Accordion type="single" collapsible className="w-full">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Do I need the CLI?</AccordionTrigger>
+    <AccordionContent>
+      No — you can copy component source files manually. The CLI (`pnpm shadcn`) just automates the process of adding components to your project and keeping them up to date.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Do I have to use Biome?</AccordionTrigger>
+    <AccordionContent>
+      No. LibyUI uses Biome internally for speed and zero-config formatting. You can use ESLint and Prettier instead — nothing in LibyUI depends on your linter choice at runtime.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-3">
+    <AccordionTrigger>Can I use LibyUI without TypeScript?</AccordionTrigger>
+    <AccordionContent>
+      Yes, but you'll lose prop autocompletion and type safety for variants and sizes. TypeScript is strongly recommended for the best developer experience.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-4">
+    <AccordionTrigger>What version of Tailwind CSS is required?</AccordionTrigger>
+    <AccordionContent>
+      LibyUI requires Tailwind CSS v4. It uses the PostCSS plugin (`@tailwindcss/postcss`) and the `tw-animate-css` package for animations. Make sure your `postcss.config.mjs` is configured accordingly.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
 
 <FeedbackBlock>
 Is there a tooling topic you'd like covered in more detail? Open an issue or leave feedback here.

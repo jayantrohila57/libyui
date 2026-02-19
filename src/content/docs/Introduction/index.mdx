@@ -4,6 +4,12 @@ description: What LibyUI is, why it was built, and how to install and use it in 
 root: true
 icon: Book
 ---
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 # Introduction
 
@@ -11,23 +17,38 @@ LibyUI is a modern, accessible, and beautifully designed React component library
 
 ## Why LibyUI?
 
-<Accordions>
-  <Accordion title="Beautiful by default">
-    Every component ships with a carefully considered visual design. You get great-looking UI from day one, with full freedom to restyle using Tailwind CSS classes or design tokens.
-  </Accordion>
-  <Accordion title="Accessible out of the box">
-    Components are built on Radix UI primitives and follow WCAG 2.1 guidelines. Keyboard navigation, ARIA attributes, and focus management are handled for you.
-  </Accordion>
-  <Accordion title="TypeScript-first">
-    Every component is fully typed. You get autocomplete for props, variants, and sizes — and TypeScript will catch mistakes before they reach the browser.
-  </Accordion>
-  <Accordion title="Customizable with Tailwind CSS">
-    LibyUI uses `class-variance-authority` for variants and `tailwind-merge` for safe class overrides. Pass any Tailwind class via `className` and it just works.
-  </Accordion>
-  <Accordion title="Mobile-first and responsive">
-    All components and blocks are designed mobile-first. They adapt gracefully from small screens to large monitors without extra configuration.
-  </Accordion>
-</Accordions>
+<Accordion type="single" collapsible className="w-full">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Beautiful by default</AccordionTrigger>
+    <AccordionContent>
+      Every component ships with a carefully considered visual design. You get great-looking UI from day one, with full freedom to restyle using Tailwind CSS classes or design tokens.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Accessible out of the box</AccordionTrigger>
+    <AccordionContent>
+      Components are built on Radix UI primitives and follow WCAG 2.1 guidelines. Keyboard navigation, ARIA attributes, and focus management are handled for you.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-3">
+    <AccordionTrigger>TypeScript-first</AccordionTrigger>
+    <AccordionContent>
+      Every component is fully typed. You get autocomplete for props, variants, and sizes — and TypeScript will catch mistakes before they reach the browser.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-4">
+    <AccordionTrigger>Customizable with Tailwind CSS</AccordionTrigger>
+    <AccordionContent>
+      LibyUI uses `class-variance-authority` for variants and `tailwind-merge` for safe class overrides. Pass any Tailwind class via `className` and it just works.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-5">
+    <AccordionTrigger>Mobile-first and responsive</AccordionTrigger>
+    <AccordionContent>
+      All components and blocks are designed mobile-first. They adapt gracefully from small screens to large monitors without extra configuration.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
 
 ## Quick Start
 
@@ -71,14 +92,44 @@ export default function App() {
 
 ## What's inside?
 
-<Cards>
-  <Card title="Components" href="/docs/components" description="Primitives and composite components — the core building blocks of every UI." />
-  <Card title="Blocks" href="/docs/blocks" description="Pre-built layout sections you can copy, paste, and customize instantly." />
-  <Card title="Modules" href="/docs/modules" description="Higher-level feature modules like data tables and form systems." />
-  <Card title="Patterns" href="/docs/patterns" description="Proven design and composition patterns for common UI challenges." />
-  <Card title="Recipes" href="/docs/recipes" description="Step-by-step recipes for building real-world features with LibyUI." />
-  <Card title="Tooling" href="/docs/tooling" description="CLI, TypeScript config, linting, and the developer toolchain." />
-</Cards>
+<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <li>
+    <a href="/docs/components" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Components</h3>
+      <p className="text-gray-600">Primitives and composite components — the core building blocks of every UI.</p>
+    </a>
+  </li>
+  <li>
+    <a href="/docs/blocks" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Blocks</h3>
+      <p className="text-gray-600">Pre-built layout sections you can copy, paste, and customize instantly.</p>
+    </a>
+  </li>
+  <li>
+    <a href="/docs/modules" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Modules</h3>
+      <p className="text-gray-600">Higher-level feature modules like data tables and form systems.</p>
+    </a>
+  </li>
+  <li>
+    <a href="/docs/patterns" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Patterns</h3>
+      <p className="text-gray-600">Proven design and composition patterns for common UI challenges.</p>
+    </a>
+  </li>
+  <li>
+    <a href="/docs/recipes" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Recipes</h3>
+      <p className="text-gray-600">Step-by-step recipes for building real-world features with LibyUI.</p>
+    </a>
+  </li>
+  <li>
+    <a href="/docs/tooling" className="block p-6 border rounded-lg hover:bg-gray-50 transition-colors">
+      <h3 className="text-lg font-semibold mb-2">Tooling</h3>
+      <p className="text-gray-600">CLI, TypeScript config, linting, and the developer toolchain.</p>
+    </a>
+  </li>
+</ul>
 
 <FeedbackBlock>
 Was this introduction helpful? Let us know — your feedback shapes the docs.
