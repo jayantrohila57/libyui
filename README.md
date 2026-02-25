@@ -5,7 +5,6 @@
 LibyUI is a modern, accessible, and beautifully designed React component library built with TypeScript and Tailwind CSS. It provides components, blocks, modules, and patterns to help you build stunning web applications with confidence.
 
 - **Beautiful by default** — Thoughtfully crafted components with a modern aesthetic
-- **Accessible** — Built on Radix UI primitives, following WCAG 2.1 guidelines
 - **TypeScript-first** — Full type safety with autocomplete for all props, variants, and sizes
 - **Customizable** — Override anything with Tailwind CSS classes via `className`
 - **Mobile-first** — Responsive design that works seamlessly across all devices
@@ -16,7 +15,6 @@ LibyUI is a modern, accessible, and beautifully designed React component library
 |------|---------|
 | [Next.js 16](https://nextjs.org) | App framework |
 | [fumadocs-ui](https://fumadocs.dev) | Documentation UI and MDX pipeline |
-| [Radix UI](https://radix-ui.com) | Accessible primitive components |
 | [Tailwind CSS v4](https://tailwindcss.com) | Utility-first styling |
 | [TypeScript](https://typescriptlang.org) | Type safety |
 | [Biome](https://biomejs.dev) | Linting and formatting |

@@ -2,18 +2,5 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "libyui",
   "homepage": "https://libyui.com",
-  "items": [
-    {
-      "name": "button",
-      "description": "this is a button component",
-      "type": "registry:component",
-      "dependencies": ["@radix-ui/react-slot"],
-      "files": [
-        {
-          "path": "src/components/ui/button.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    }
-  ]
+  "items": []
 }

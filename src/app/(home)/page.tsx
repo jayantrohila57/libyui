@@ -78,24 +78,32 @@ export default function HeroSection() {
                     with ease.
                   </p>
                 </div>
-                <div className=" flex flex-col w-full sm:flex-row justify-start items-start gap-4">
-                  <Button className="w-full sm:w-auto" asChild size={"lg"}>
-                    <Link href="/docs">
-                      <span className="text-nowrap">Documentation</span>
-                      <ChevronRight className="opacity-50" />
-                    </Link>
-                  </Button>
+                <div className="flex flex-col w-full sm:flex-row justify-start items-start gap-4">
                   <Button
-                    variant={"outline"}
                     className="w-full sm:w-auto"
-                    asChild
-                    size={"lg"}
-                  >
-                    <Link href="/docs/components">
-                      <span className="text-nowrap">View Components</span>
-                      <ChevronRight className="opacity-50" />
-                    </Link>
-                  </Button>
+                    size="lg"
+                    render={
+                      <Link href="/docs" className="flex items-center gap-2">
+                        <span className="text-nowrap">Documentation</span>
+                        <ChevronRight className="opacity-50" />
+                      </Link>
+                    }
+                  />
+
+                  <Button
+                    variant="outline"
+                    className="w-full sm:w-auto"
+                    size="lg"
+                    render={
+                      <Link
+                        href="/docs/components"
+                        className="flex items-center gap-2"
+                      >
+                        <span className="text-nowrap">View Components</span>
+                        <ChevronRight className="opacity-50" />
+                      </Link>
+                    }
+                  />
                 </div>
               </div>
               <div
