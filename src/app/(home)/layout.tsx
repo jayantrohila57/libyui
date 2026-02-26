@@ -1,29 +1,15 @@
-import { HomeLayout } from "fumadocs-ui/layouts/home";
-import { BookIcon } from "lucide-react";
-import { LLogo } from "@/components/common/logo";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
 
 export default function Layout({ children }: LayoutProps<"/">) {
   return (
-    <HomeLayout
-      nav={{
-        title: (
-          <span className="flex items-center gap-2">
-            <LLogo size={32} />
-            <span className="font-semibold">LibyUI</span>
-          </span>
-        ),
-      }}
-      links={[
-        {
-          icon: <BookIcon />,
-          text: "Docs",
-          url: "/docs",
-          secondary: false,
-          active: "nested-url",
-        },
-      ]}
+    <div
+      data-slot="layout"
+      className="bg-background relative z-10 flex min-h-svh flex-col"
     >
-      {children}
-    </HomeLayout>
+      <SiteHeader />
+      <main className="flex flex-1 flex-col">{children}</main>
+      <SiteFooter />
+    </div>
   );
 }

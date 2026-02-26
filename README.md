@@ -14,7 +14,6 @@ LibyUI is a modern, accessible, and beautifully designed React component library
 | Tool | Purpose |
 |------|---------|
 | [Next.js 16](https://nextjs.org) | App framework |
-| [fumadocs-ui](https://fumadocs.dev) | Documentation UI and MDX pipeline |
 | [Tailwind CSS v4](https://tailwindcss.com) | Utility-first styling |
 | [TypeScript](https://typescriptlang.org) | Type safety |
 | [Biome](https://biomejs.dev) | Linting and formatting |

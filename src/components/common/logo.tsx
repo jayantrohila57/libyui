@@ -8,7 +8,7 @@ type LLogoProps = {
 };
 
 export const LLogo = React.forwardRef<SVGSVGElement, LLogoProps>(
-  ({ size = 140, borderRadius = 20, className }, ref) => {
+  ({ size = 120, borderRadius = 20, className }, ref) => {
     return (
       <svg
         ref={ref}

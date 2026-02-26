@@ -1,34 +1,33 @@
-import { DocsLayout } from "fumadocs-ui/layouts/notebook";
-import { BookIcon } from "lucide-react";
-import { LLogo } from "@/components/common/logo";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { docsSource } from "@/module/docs/docs.options";
-import { gitConfig } from "@/module/github/git.config";
+import { AppSidebar } from "@/module/docs/docs.sidebar";
 
-export default function Layout({ children }: LayoutProps<"/docs">) {
+export default function DocsLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <DocsLayout
-      tree={docsSource.getPageTree()}
-      nav={{
-        title: (
-          <span className="flex items-center gap-2">
-            <LLogo size={32} />
-            <span className="font-semibold">LibyUI</span>
-          </span>
-        ),
-      }}
-      links={[
-        {
-          icon: <BookIcon />,
-          text: "Docs",
-          url: "/docs",
-          secondary: false,
-          active: "nested-url",
-        },
-      ]}
-      tabMode="navbar"
-      githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}`}
+    <div
+      data-slot="layout"
+      className="bg-background relative z-10 flex min-h-svh flex-col"
     >
-      {children}
-    </DocsLayout>
+      <SiteHeader />
+      <SidebarProvider
+        style={
+          {
+            "--sidebar-width": "calc(var(--spacing) * 72)",
+            "--header-height": "calc(var(--spacing) * 12)",
+          } as React.CSSProperties
+        }
+      >
+        <AppSidebar variant="inset" tree={docsSource.pageTree} />
+        <SidebarInset>
+          {children} <SiteFooter />
+        </SidebarInset>
+      </SidebarProvider>
+    </div>
   );
 }

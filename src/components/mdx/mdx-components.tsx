@@ -19,7 +19,7 @@ import { getIconForLanguageExtension } from "../common/icons";
 import { FeedbackBlock } from "../feedback/client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 
-export function getMDXComponents(components?: MDXComponents): MDXComponents {
+export function getMDXComponents(): MDXComponents {
   return {
     Tabs,
     TabsContent,
@@ -296,6 +296,5 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
         {props.children}
       </FeedbackBlock>
     ),
-    ...components,
   };
 }
